@@ -1,0 +1,34 @@
+project:
+  type: book
+  resources:
+  - "data/*"
+
+book:
+  title: "Zbiór zadań - Python"
+  author: Piotr Jastrzębski
+  date: today
+  cover-image: pop.jpg
+  chapters:
+    - index.qmd
+    - part: "Wprowadzenie do języka Python"
+      chapters: 
+        - wejsciewyjscie.qmd
+  downloads: pdf
+  repo-url: https://github.com/pjastr/zbior-zadan-python
+  repo-actions: [issue]
+
+
+format:
+  html:
+    theme:
+      light: cosmo
+      dark: solar
+    lang: pl
+  pdf:
+    lang: pl
+    header-includes: |
+      \titlehead{\includegraphics[width=6in]{pop.jpg}}
+
+
+editor: visual
+
