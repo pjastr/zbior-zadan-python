@@ -1,0 +1,120 @@
+# Krotki
+
+1. Utwórz krotkę `weekdays` zawierającą nazwy pięciu dni roboczych (jako stringi). Wypisz całą krotkę, a następnie wypisz osobno pierwszy i ostatni element.
+
+2. Utwórz pustą krotkę `empty_tuple` oraz krotkę jednoelementową `single_item` przechowującą liczbę `42`. Wypisz obie krotki wraz z ich typem (`type()`). Sprawdź, co się stanie, jeśli pominiesz przecinek w krotce jednoelementowej, i wyjaśnij wynik komentarzem.
+
+3. Dana jest krotka:
+```python
+months = ("Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec")
+```
+Korzystając wyłącznie z wycinków (slicing):
+- pobierz miesiące letnie (Jun–Aug),
+- pobierz co trzeci miesiąc,
+- pobierz ostatnie cztery miesiące,
+- odwróć kolejność elementów.
+
+4. Dana jest krotka:
+```python
+coordinates = (52.23, 21.01)
+```
+Spróbuj zmienić drugi element na `19.94`. Przechwyć wyjątek `TypeError` za pomocą bloku `try/except` i wypisz komunikat wyjaśniający, dlaczego operacja się nie powiodła.
+
+5. Dana jest krotka:
+```python
+grades = (4, 5, 3, 5, 4, 5, 2, 4, 5, 3)
+```
+Wypisz, ile razy występuje ocena `5` (`.count()`), oraz podaj indeks pierwszego wystąpienia oceny `2` (`.index()`).
+
+6. Dana jest krotka:
+```python
+person = ("Alice", 30, "developer", "Warsaw")
+```
+Rozpakuj ją do zmiennych `name`, `age`, `role`, `city` w jednej linii. Następnie rozpakuj ponownie, ale tym razem przypisz tylko imię do `name`, a resztę do zmiennej `rest` za pomocą operatora `*`.
+
+7. Utwórz dwie zmienne `x = 10` i `y = 20`. Zamień ich wartości miejscami w jednej linii, korzystając z mechanizmu pakowania/rozpakowywania krotek (bez zmiennej tymczasowej). Wypisz wartości przed zamianą i po niej.
+
+8. Utwórz słownik `city_distances`, w którym kluczami są krotki dwóch miast, a wartościami — odległości w kilometrach, np.:
+```python
+("Warsaw", "Berlin"): 573
+```
+Dodaj co najmniej 4 wpisy. Napisz kod, który na podstawie podanej pary miast wypisuje odległość lub komunikat, że trasa nie istnieje.
+
+9. Dana jest krotka:
+```python
+products = ("laptop", "mouse", "keyboard", "monitor", "headset")
+```
+Używając `enumerate()` z parametrem `start=1`, wypisz ponumerowaną listę produktów w formacie:
+```
+1. laptop
+2. mouse
+...
+```
+
+10. Dane są dwie listy:
+```python
+country_names = ["Poland", "Germany", "France", "Spain"]
+country_codes = ["PL", "DE", "FR", "ES"]
+```
+Połącz je w krotkę krotek `country_data` za pomocą `zip()` opakowanego w `tuple()`. Wypisz wynik oraz oddzielnie trzeci element.
+
+11. Dana jest lista krotek:
+```python
+runners = [("Alice", 12.5), ("Bob", 11.8), ("Charlie", 13.1), ("Diana", 11.2)]
+```
+Posortuj listę rosnąco według czasu (drugi element krotki), korzystając z `sorted()` i parametru `key` z wyrażeniem `lambda`. Wypisz posortowaną listę.
+
+12. Zaimportuj `namedtuple` z modułu `collections`. Utwórz typ `Book` z polami `title`, `author`, `year`, `pages`. Stwórz trzy instancje książek i umieść je w liście `library`. Wypisz tytuł i autora każdej książki, iterując po liście.
+
+13. Napisz funkcję `analyze_numbers(data)`, która przyjmuje krotkę liczb i zwraca krotkę trzech wartości: minimum, maksimum i średnią arytmetyczną. Wywołaj funkcję i rozpakuj wynik do trzech zmiennych `min_val`, `max_val`, `avg_val`.
+
+14. Dana jest krotka:
+```python
+original = (10, 20, 30, 40, 50)
+```
+Zamień krotkę na listę, dodaj element `60`, usuń element `20`, posortuj malejąco, a następnie zamień z powrotem na krotkę `modified`. Wypisz krotkę wejściową i wynikową.
+
+15. Dana jest struktura przechowująca dane o uczniach:
+```python
+classroom = (
+    ("Alice", (90, 85, 92)),
+    ("Bob", (78, 82, 88)),
+    ("Charlie", (95, 91, 87))
+)
+```
+Napisz kod, który wypisuje imię każdego ucznia wraz ze średnią jego ocen, korzystając wyłącznie z indeksowania i pętli `for`.
+
+16. Dane są krotki:
+```python
+version_a = (2, 8, 1)
+version_b = (2, 8, 3)
+version_c = (2, 10, 0)
+version_d = (3, 0, 0)
+```
+Wypisz wyniki porównań `version_a < version_b`, `version_b < version_c` i `version_c < version_d`. W komentarzu wyjaśnij zasadę leksykograficznego porównywania krotek.
+
+17. Utwórz listę krotek reprezentujących współrzędne punktów:
+```python
+raw_points = [(1, 2), (3, 4), (1, 2), (5, 6), (3, 4), (7, 8)]
+```
+Zamień listę na `set`, aby usunąć duplikaty, a następnie zamień wynik z powrotem na posortowaną listę krotek `unique_points`. Wypisz wynik i wyjaśnij komentarzem, dlaczego krotki mogą być elementami zbioru, a listy nie.
+
+18. Dana jest lista słowników:
+```python
+sensors = [
+    {"id": "S1", "temp": 22.5, "humidity": 45},
+    {"id": "S2", "temp": 19.8, "humidity": 60},
+    {"id": "S3", "temp": 25.1, "humidity": 38},
+    {"id": "S4", "temp": 18.3, "humidity": 72},
+]
+```
+Za pomocą generator expression i `tuple()` utwórz krotkę `high_humidity` zawierającą krotki `(id, humidity)` tylko dla czujników, których wilgotność przekracza 50.
+
+19. Zaimportuj moduł `sys`. Utwórz listę `data_list` i krotkę `data_tuple` zawierające te same 1000 liczb całkowitych (od 0 do 999). Porównaj rozmiar obu struktur za pomocą `sys.getsizeof()`. Wypisz wyniki i wyjaśnij komentarzem, dlaczego krotka zajmuje mniej pamięci.
+
+20. Napisz trzy funkcje operujące wyłącznie na krotkach (bez konwersji na listę):
+1. `tuple_replace(data, index, value)` — zwraca nową krotkę, w której element o podanym indeksie został zastąpiony wartością `value` (wykorzystaj slicing i konkatenację krotek).
+2. `tuple_insert(data, index, value)` — zwraca nową krotkę z wstawionym elementem na podanej pozycji.
+3. `tuple_remove(data, index)` — zwraca nową krotkę bez elementu o podanym indeksie.
+
+Przetestuj każdą funkcję na krotce `sample = (10, 20, 30, 40, 50)` i wypisz wyniki.

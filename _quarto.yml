@@ -13,6 +13,8 @@ book:
     - part: "Wprowadzenie do języka Python"
       chapters: 
         - wejsciewyjscie.qmd
+        - listy.qmd
+        - krotki.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/zbior-zadan-python
   repo-actions: [issue]

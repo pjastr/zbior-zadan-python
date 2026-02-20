@@ -2,3 +2,5 @@
 
 Tu będzie zbiór zadań z programowania w języku Python. Inspiracją było zebranie zadań powstałych w trakcie prowadzenia zajęć dydaktycznych realizowanych na Wydziale Matematyki i Informatyki Uniwersytetu Warmińsko-Mazurskiego w Olsztynie.
 
+*Niektóre treści zadań generowane za pomocą ChatGPT, Claude, Gemini lub DeepSeek.*
+

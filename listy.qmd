@@ -1,0 +1,129 @@
+# Listy
+
+1. Utwórz listę `fruits` zawierającą pięć nazw owoców (jako stringi). Wypisz całą listę, a następnie wypisz osobno drugi i ostatni element.
+
+2. Utwórz pustą listę `shopping_list`. Dodaj do niej cztery produkty za pomocą metody `.append()`, a następnie wstaw piąty produkt na początek listy za pomocą `.insert()`. Wypisz wynik.
+
+3. Dana jest lista:
+```python
+colors = ["red", "green", "blue", "yellow", "green", "purple"]
+```
+Usuń pierwsze wystąpienie `"green"` za pomocą `.remove()`, a następnie usuń element o indeksie `3` za pomocą `del`. Wypisz listę po każdej operacji.
+
+4. Utwórz listę `scores` zawierającą 8 dowolnych liczb całkowitych. Wypisz liczbę elementów (`len()`), ich sumę (`sum()`) oraz średnią arytmetyczną (obliczoną ręcznie na podstawie `sum` i `len`).
+
+5. Dana jest lista:
+```python
+letters = ["a", "b", "c", "d", "e", "f", "g", "h"]
+```
+Korzystając wyłącznie z wycinków (slicing):
+- pobierz pierwsze trzy elementy,
+- pobierz co drugi element,
+- pobierz elementy od indeksu `2` do `5` (włącznie),
+- odwróć listę.
+
+6. Dana jest lista:
+```python
+temperatures = [23.1, 18.4, 30.0, 15.7, 22.2, 28.9]
+```
+Wypisz listę posortowaną rosnąco (bez modyfikacji oryginału — użyj `sorted()`), a następnie posortuj oryginał malejąco w miejscu (`.sort()`). Wypisz obie wersje.
+
+7. Utwórz listę `squares` zawierającą kwadraty liczb od 1 do 15 włącznie, korzystając z list comprehension. Następnie utwórz drugą listę `even_squares`, która zawiera tylko te kwadraty, które są liczbami parzystymi.
+
+8. Dana jest lista:
+```python
+words = ["apple", "hi", "banana", "go", "strawberry", "no", "watermelon"]
+```
+Przy użyciu list comprehension utwórz nową listę `long_words`, która zawiera tylko słowa dłuższe niż 4 znaki.
+
+9. Utwórz listę dwuwymiarową `matrix` o wymiarach 3×3, wypełnioną liczbami od 1 do 9. Wypisz:
+- cały wiersz o indeksie `1`,
+- element znajdujący się w wierszu `2`, kolumnie `0`,
+- wszystkie elementy z przekątnej głównej (indeksy `[0][0]`, `[1][1]`, `[2][2]`).
+
+10. Dane są dwie listy:
+```python
+student_names = ["Alice", "Bob", "Charlie", "Diana"]
+student_grades = [85, 92, 78, 95]
+```
+Połącz je w listę krotek `student_records` za pomocą `zip()`. Następnie wypisz imiona studentów, którzy uzyskali ocenę wyższą niż 80.
+
+11. Dana jest lista:
+```python
+cities = ["Warsaw", "Berlin", "Prague", "Vienna", "Budapest", "Prague", "Rome"]
+```
+Używając `enumerate()`, wypisz wszystkie indeksy, pod którymi występuje wartość `"Prague"`.
+
+12. Utwórz listę zagnieżdżoną:
+```python
+original = [[1, 2], [3, 4], [5, 6]]
+```
+Wykonaj kopię płytką (`shallow_copy`) i kopię głęboką (`deep_copy`). Zmodyfikuj element `original[0][0] = 99`. Wypisz wszystkie trzy listy i wyjaśnij (komentarzem w kodzie), dlaczego wyniki się różnią.
+
+13. Dana jest lista:
+```python
+nested = [[1, 2, 3], [4, 5], [6, 7, 8, 9], [10]]
+```
+Napisz dwa rozwiązania, które spłaszczą ją do jednej listy `flat_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`:
+1. za pomocą zagnieżdżonego list comprehension,
+2. za pomocą pętli `for`.
+
+14. Dana jest lista liczb:
+```python
+numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]
+```
+Napisz funkcję `chunk_list(data, chunk_size)`, która podzieli listę na mniejsze podlisty o zadanym rozmiarze. Przykład wywołania:
+```python
+chunk_list(numbers, 4)
+# oczekiwany wynik: [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]]
+```
+
+15. Dana jest macierz (lista list):
+```python
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+```
+Napisz kod, który utworzy `transposed_matrix` — transpozycję powyższej macierzy — korzystając z `zip()` i list comprehension. Wypisz wynik.
+
+16. Dana jest lista:
+```python
+raw_data = [3, 5, 2, 3, 7, 5, 8, 2, 9, 7, 1, 3]
+```
+Utwórz listę `unique_data`, która zawiera te same elementy bez duplikatów, zachowując oryginalną kolejność pierwszego wystąpienia. Nie korzystaj z `set()` w sposób, który zmienia kolejność.
+
+17. Dana jest lista stringów:
+```python
+raw_prices = ["12.50", "abc", "7.99", "", "25.00", "not_a_number", "3.14"]
+```
+1. Za pomocą funkcji pomocniczej i `filter()` odfiltruj elementy, które nie dają się przekonwertować na `float`.
+2. Za pomocą `map()` przekonwertuj przefiltrowane elementy na typ `float`.
+3. Wynik zapisz w liście `valid_prices`.
+
+18. Korzystając wyłącznie z wbudowanej listy Pythona i jej metod (`.append()`, `.pop()`, `.pop(0)`):
+1. Zasymuluj działanie stosu (LIFO) — dodaj 5 elementów, a następnie zdejmij 3.
+2. Zasymuluj działanie kolejki (FIFO) — dodaj 5 elementów, a następnie pobierz 3.
+
+Wypisz stan struktury po każdej operacji.
+
+19. Dana jest lista słowników:
+```python
+employees = [
+    {"name": "Alice", "department": "IT", "salary": 7200},
+    {"name": "Bob", "department": "HR", "salary": 5400},
+    {"name": "Charlie", "department": "IT", "salary": 6800},
+    {"name": "Diana", "department": "HR", "salary": 5900},
+    {"name": "Eve", "department": "IT", "salary": 7200},
+]
+```
+Posortuj listę:
+1. Rosnąco według `department`, a w ramach tego samego działu — malejąco według `salary`.
+2. Użyj parametru `key` w funkcji `sorted()` z wyrażeniem `lambda`.
+
+20. Napisz dwa warianty kodu, które znajdują pierwszą liczbę podzielną przez 7 i 13 w zakresie od 1 do 10 000 000:
+- List comprehension — najpierw generuje pełną listę, potem pobiera pierwszy element.
+- Generator expression — korzysta z `next()` na wyrażeniu generatorowym.
+
+Zmierz czas wykonania obu wariantów za pomocą modułu `time` i wypisz wyniki. W komentarzu wyjaśnij, dlaczego różnią się wydajnością.
