@@ -1,6 +1,5 @@
 # Słowniki
 
-# Zadania ze słowników w Pythonie
 
 1. Utwórz słownik `student` zawierający klucze: `name`, `age`, `grade`. Przypisz im dowolne wartości, a następnie wypisz wartość przypisaną do klucza `name`.
 
