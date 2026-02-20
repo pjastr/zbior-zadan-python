@@ -1,0 +1,37 @@
+# Słowniki
+
+# Zadania ze słowników w Pythonie
+
+1. Utwórz słownik `student` zawierający klucze: `name`, `age`, `grade`. Przypisz im dowolne wartości, a następnie wypisz wartość przypisaną do klucza `name`.
+
+2. Dany jest słownik `fruits = {"apple": 3, "banana": 5, "cherry": 2}`. Dodaj nowy klucz `orange` z wartością 7, a następnie wypisz cały słownik.
+
+3. Dany jest słownik `config = {"host": "localhost", "port": 8080, "debug": True}`. Usuń klucz `debug` za pomocą metody `pop()` i wypisz usuniętą wartość oraz pozostały słownik.
+
+4. Dany jest słownik `prices = {"milk": 3.50, "bread": 2.00, "eggs": 5.99, "butter": 4.25}`. Napisz pętlę, która wypisze tylko te produkty, których cena jest wyższa niż 3.00.
+
+5. Utwórz słownik `squares` za pomocą dict comprehension, który dla liczb od 1 do 10 przypisze każdej liczbie jej kwadrat (np. `{1: 1, 2: 4, 3: 9, ...}`).
+
+6. Dane są dwie listy: `keys = ["name", "city", "language"]` oraz `values = ["Alice", "Warsaw", "Python"]`. Utwórz z nich słownik `profile` za pomocą funkcji `zip()`.
+
+7. Dany jest słownik `inventory = {"apples": 10, "bananas": 0, "cherries": 5, "dates": 0}`. Za pomocą dict comprehension utwórz nowy słownik `in_stock`, który zawiera tylko produkty z ilością większą niż 0.
+
+8. Dany jest słownik `scores = {"Alice": 85, "Bob": 92, "Charlie": 78, "Diana": 95}`. Znajdź klucz z najwyższą wartością, korzystając z funkcji `max()` i parametru `key`.
+
+9. Napisz funkcję `merge_dicts(dict_a, dict_b)`, która łączy dwa słowniki. Jeśli oba słowniki mają ten sam klucz, wartości powinny zostać zsumowane. Zwróć nowy słownik.
+
+10. Dany jest tekst `text = "apple banana apple cherry banana apple"`. Napisz kod, który zliczy wystąpienia każdego słowa i zapisze wynik w słowniku `word_count` bez użycia klasy `Counter`.
+
+11. Dany jest słownik `data = {"a": 1, "b": 2, "c": 3}`. Napisz kod, który zamieni miejscami klucze z wartościami, tworząc nowy słownik `inverted_data` (np. `{1: "a", 2: "b", 3: "c"}`).
+
+12. Utwórz zagnieżdżony słownik `school`, który przechowuje dane trzech uczniów. Każdy uczeń (klucz to `student_1`, `student_2`, `student_3`) ma przypisany słownik z kluczami `name`, `age` i `grades` (lista ocen). Wypisz średnią ocen drugiego ucznia.
+
+13. Napisz funkcję `group_by_length(words)`, która przyjmuje listę stringów i zwraca słownik, w którym kluczem jest długość słowa, a wartością lista słów o tej długości. Użyj metody `setdefault()`.
+
+14. Dany jest słownik `settings = {"resolution": "1080p", "volume": 75, "brightness": 50}`. Napisz funkcję `update_settings(current, overrides)`, która aktualizuje wartości w `current` tylko dla kluczy, które już w nim istnieją, ignorując nowe klucze z `overrides`.
+
+15. Dany jest słownik `nested = {"a": {"b": {"c": 42}}}`. Napisz funkcję `deep_get(dictionary, keys_path, default_value=None)`, która przyjmuje słownik i string z kluczami rozdzielonymi kropką (np. `"a.b.c"`) i zwraca wartość zagnieżdżoną lub `default_value`, jeśli ścieżka nie istnieje.
+
+16. Napisz funkcję `flatten_dict(nested_dict, parent_key="", separator=".")`, która spłaszcza zagnieżdżony słownik do jednopoziomowego. Na przykład `{"a": {"b": 1, "c": {"d": 2}}}` powinno dać `{"a.b": 1, "a.c.d": 2}`. Użyj rekurencji.
+
+17. Napisz funkcję `diff_dicts(dict_a, dict_b)`, która porównuje dwa słowniki i zwraca słownik z trzema kluczami: `added` (klucze obecne tylko w `dict_b`), `removed` (klucze obecne tylko w `dict_a`) oraz `changed` (klucze obecne w obu, ale z różnymi wartościami, zapisane jako krotka `(old_value, new_value)`).
