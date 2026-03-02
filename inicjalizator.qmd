@@ -1,0 +1,43 @@
+# Inicjalizator
+
+Dla każdej klasy należy poza klasą stworzyć obiekt co najmniej jeden raz.
+
+1. Napisz klasę `Book` z inicjalizatorem przyjmującym dwa argumenty — `title` i `author`. Oba mają być zapisane jako atrybuty instancji. Utwórz dwa obiekty tej klasy i wypisz ich atrybuty.
+
+2. Napisz klasę `Circle` z inicjalizatorem przyjmującym argument `radius`. Dodaj atrybut instancji `area`, który jest obliczany automatycznie w momencie tworzenia obiektu na podstawie przekazanego promienia.
+
+3. Napisz klasę `Student` z inicjalizatorem przyjmującym `name` oraz opcjonalny argument `grade` z wartością domyślną "A". Utwórz jednego studenta z oceną domyślną i drugiego z oceną podaną jawnie.
+
+4. Napisz klasę `Color` z inicjalizatorem przyjmującym trzy argumenty — `red`, `green` i `blue`, każdy z wartością domyślną 0. Utwórz obiekt, przekazując argumenty wyłącznie jako kluczowe (keyword arguments).
+
+5. Napisz klasę `ShoppingList` z inicjalizatorem przyjmującym `owner` jako argument obowiązkowy. Inicjalizator powinien dodatkowo tworzyć pusty atrybut `items` będący listą. Nie przekazuj tej listy jako argumentu.
+
+6. Napisz klasę `Config` z inicjalizatorem przyjmującym `app_name` jako argument obowiązkowy. Inicjalizator powinien tworzyć pusty atrybut `settings` będący słownikiem. Dodaj potem ręcznie dwie pary klucz-wartość do tego słownika na utworzonym obiekcie.
+
+7. Napisz klasę `Playlist` z inicjalizatorem przyjmującym `name` oraz opcjonalny argument `songs`, który domyślnie ma być pustą listą. Rozwiąż poprawnie problem mutowalnego argumentu domyślnego, używając wartości None i warunkowego przypisania wewnątrz inicjalizatora.
+
+8. Napisz klasę `TemperatureReading` z inicjalizatorem przyjmującym `value` i `unit` z wartością domyślną "Celsius". Dodaj walidację — jeśli `unit` nie jest jednym z ciągów "Celsius", "Fahrenheit" lub "Kelvin", inicjalizator powinien rzucić ValueError z odpowiednim komunikatem.
+
+9. Napisz klasę `User` z inicjalizatorem przyjmującym `username` i `email`. Dodaj walidację sprawdzającą, czy `email` zawiera znak "@" — jeśli nie, inicjalizator powinien rzucić ValueError. Przetestuj tworzenie obiektu z poprawnym i niepoprawnym adresem.
+
+10. Napisz klasę `BankAccount` z inicjalizatorem przyjmującym `owner` i opcjonalny `balance` z wartością domyślną 0. Dodaj walidację — jeśli `balance` jest liczbą ujemną, inicjalizator powinien rzucić ValueError. Utwórz konto z saldem dodatnim i przetestuj próbę utworzenia konta z saldem ujemnym.
+
+11. Napisz klasę `Product` z inicjalizatorem przyjmującym `name`, `price` i opcjonalny `tags` (lista tagów z domyślną wartością None). Dodaj walidację — `price` musi być liczbą dodatnią, a `name` nie może być pustym ciągiem znaków. Rozwiąż problem mutowalnego argumentu domyślnego dla `tags`.
+
+12. Napisz klasę `Scoreboard` z inicjalizatorem przyjmującym `game_name` oraz opcjonalny `scores` będący słownikiem (domyślnie None). Wewnątrz inicjalizatora utwórz kopię przekazanego słownika zamiast przypisywać referencję bezpośrednio. Pokaż, dlaczego to ma znaczenie, modyfikując oryginalny słownik po utworzeniu obiektu.
+
+13. Napisz klasę `DateRange` z inicjalizatorem przyjmującym `start_date` i `end_date` jako ciągi znaków w formacie "YYYY-MM-DD". Inicjalizator powinien konwertować je na obiekty `datetime.date` i walidować, czy `start_date` nie jest późniejsza niż `end_date`.
+
+14. Napisz klasę `Survey` z inicjalizatorem przyjmującym `title`, `*questions` (dowolną liczbę pytań jako `*args`) oraz opcjonalny `anonymous` z wartością domyślną True. Zapisz pytania jako listę w atrybucie instancji. Utwórz obiekt z pięcioma pytaniami.
+
+15. Napisz klasę `ServerConfig` z inicjalizatorem przyjmującym `host` i `port` jako argumenty wyłącznie pozycyjne (z użyciem `/`) oraz `timeout` i `max_retries` jako argumenty wyłącznie kluczowe (z użyciem `*`), oba z wartościami domyślnymi. Pokaż poprawne i błędne wywołanie.
+
+16. Napisz klasę `Matrix` z inicjalizatorem przyjmującym argument `data` będący listą list (macierz dwuwymiarowa). Dodaj walidację sprawdzającą, czy wszystkie wewnętrzne listy mają tę samą długość — jeśli nie, rzuć ValueError. Zapisz także atrybuty `rows` i `cols` obliczone na podstawie danych.
+
+17. Napisz klasę `PasswordPolicy` z inicjalizatorem przyjmującym `min_length`, `require_uppercase`, `require_digit` i `require_special_char` — wszystkie z rozsądnymi wartościami domyślnymi. Dodaj walidację — `min_length` musi być liczbą całkowitą z zakresu od 6 do 128, a pozostałe argumenty muszą być typu bool. Rzuć TypeError lub ValueError w przypadku niespełnienia warunków.
+
+18. Napisz klasę `EventLog` z inicjalizatorem przyjmującym `source` i opcjonalny `events` (lista słowników, domyślnie None). Każdy słownik w liście musi zawierać klucze "timestamp" i "message" — dodaj walidację sprawdzającą to dla każdego elementu. Inicjalizator powinien tworzyć głęboką kopię listy słowników za pomocą `copy.deepcopy`.
+
+19. Napisz klasę `QueryBuilder` z inicjalizatorem przyjmującym `table_name` i `**default_filters`. Inicjalizator powinien walidować, czy `table_name` jest niepustym ciągiem złożonym wyłącznie z liter, cyfr i podkreślników (ochrona przed SQL injection). Wartości z `**default_filters` mają być zapisane jako słownik w atrybucie instancji. Utwórz obiekt z trzema filtrami.
+
+20. Napisz klasę `Pipeline` z inicjalizatorem przyjmującym `name`, `*steps` i `**options`. Każdy element `steps` musi być obiektem wywoływalnym (callable) — dodaj walidację z użyciem funkcji `callable()`. Opcje z `**options` mają być zapisane w atrybucie `config` jako słownik. Dodaj walidację sprawdzającą, czy `name` pasuje do wzorca regex `^[a-z][a-z0-9_]*$`. Utwórz obiekt, przekazując trzy funkcje lambda jako kroki i dwie opcje konfiguracyjne.

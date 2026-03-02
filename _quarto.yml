@@ -16,6 +16,10 @@ book:
         - listy.qmd
         - krotki.qmd
         - slowniki.qmd
+        - argumenty_funkcji.qmd
+    - part: "Programowanie obiektowe"
+      chapters:
+        - inicjalizator.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/zbior-zadan-python
   repo-actions: [issue]

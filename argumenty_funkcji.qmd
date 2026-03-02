@@ -1,0 +1,42 @@
+# Argumenty funkcji
+
+
+1. Napisz funkcję `add_numbers(a, b)`, która przyjmuje dwa argumenty pozycyjne typu int i zwraca ich sumę. Wywołaj ją z argumentami 3 i 5.
+
+2. Napisz funkcję `greet(name, greeting="Hello")`, która przyjmuje imię jako argument obowiązkowy oraz powitanie jako argument z wartością domyślną. Funkcja ma zwracać sformatowany tekst powitania. Wywołaj ją na dwa sposoby — z jednym i z dwoma argumentami.
+
+3. Napisz funkcję `describe_pet(animal_type, pet_name)` i wywołaj ją, przekazując oba argumenty jako argumenty kluczowe (keyword arguments) w odwrotnej kolejności niż w definicji funkcji.
+
+4. Napisz funkcję `make_sandwich(*ingredients)`, która przyjmuje dowolną liczbę argumentów pozycyjnych reprezentujących składniki kanapki i zwraca je jako jedną listę. Wywołaj ją z trzema, a potem z sześcioma argumentami.
+
+5. Napisz funkcję `build_profile(**user_info)`, która przyjmuje dowolną liczbę argumentów kluczowych i zwraca je w postaci słownika. Wywołaj ją, przekazując co najmniej cztery różne informacje o użytkowniku.
+
+6. Napisz funkcję `calculate_power(base, exponent=2)`, w której argument `exponent` ma wartość domyślną 2. Wywołaj ją trzykrotnie — bez podawania wykładnika, z wykładnikiem 3 oraz z wykładnikiem przekazanym jako argument kluczowy.
+
+7. Napisz funkcję `format_address(street, city, zip_code, country="Poland")`, która łączy dane adresowe w jeden sformatowany ciąg znaków. Wywołaj ją, mieszając argumenty pozycyjne i kluczowe w jednym wywołaniu.
+
+8. Napisz funkcję `apply_discount(price, discount_percent, /, tax_rate=0.23)`, która używa operatora `/` wymuszającego, aby `price` i `discount_percent` były wyłącznie argumentami pozycyjnymi. Pokaż, że próba przekazania ich jako keyword arguments kończy się błędem.
+
+9. Napisz funkcję `register_user(username, *, email, age)`, która używa operatora `*` wymuszającego, aby `email` i `age` były przekazywane wyłącznie jako argumenty kluczowe. Wywołaj ją poprawnie, a następnie pokaż błędne wywołanie z samymi argumentami pozycyjnymi.
+
+10. Napisz funkcję `mix_paint(primary, secondary, /, *, finish="matte")`, która łączy oba mechanizmy — argumenty wyłącznie pozycyjne (przed `/`) i wyłącznie kluczowe (po `*`). Wywołaj ją na trzy różne sposoby.
+
+11. Napisz funkcję `log_message(message, *tags, level="INFO")`, która przyjmuje jeden argument obowiązkowy, dowolną liczbę tagów przez `*args` oraz argument kluczowy z wartością domyślną na końcu. Wywołaj ją z dwoma tagami i zmienionym poziomem logowania.
+
+12. Napisz funkcję `create_report(title, *sections, **metadata)`, która łączy argument obowiązkowy, `*args` i `**kwargs` w jednej sygnaturze. Wywołaj ją, przekazując tytuł, trzy sekcje oraz dwie pary klucz-wartość jako metadane.
+
+13. Napisz dwie funkcje — `square(n)` zwracającą kwadrat liczby oraz `double(n)` zwracającą jej podwojenie. Następnie napisz funkcję `apply_operation(func, value)`, która przyjmuje inną funkcję jako argument i wywołuje ją na przekazanej wartości. Przetestuj ją z oboma funkcjami.
+
+14. Napisz funkcję `process_data(data, *, transformer=None, validator=None)`, w której oba argumenty opcjonalne to funkcje (lub None). Jeśli `transformer` nie jest None, funkcja ma przetworzyć dane, a jeśli `validator` nie jest None — zwalidować wynik. Wywołaj ją z funkcją lambda jako transformerem.
+
+15. Napisz funkcję `repeat_action(action, times=1, /, *, delay=0)`, a następnie wywołaj ją, przekazując jako argument `action` funkcję lambda wypisującą tekst. Pokaż trzy wywołania z różnymi kombinacjami argumentów pozycyjnych i kluczowych.
+
+16. Napisz funkcję `merge_configs(*config_dicts, **overrides)`, która przyjmuje dowolną liczbę słowników jako `*args`, łączy je w jeden, a potem nadpisuje wartości przekazane jako `**kwargs`. Przetestuj ją z trzema słownikami konfiguracyjnymi i dwoma nadpisaniami.
+
+17. Napisz funkcję `safe_divide(numerator, denominator, /, *, on_error="return_none")`, która dzieli dwie liczby, a w przypadku dzielenia przez zero zachowuje się zgodnie z wartością argumentu `on_error` — może zwrócić None, zero albo rzucić wyjątek. Przetestuj każdy z trzech trybów.
+
+18. Napisz funkcję `pipeline(value, *transformations)`, która przyjmuje wartość początkową i dowolną liczbę funkcji. Funkcja ma zastosować każdą z nich po kolei na wyniku poprzedniej. Przetestuj ją, przekazując trzy funkcje lambda tworzące łańcuch przekształceń.
+
+19. Napisz dekorator `validate_types(*expected_types)`, który przyjmuje przez `*args` oczekiwane typy kolejnych argumentów dekorowanej funkcji. Dekorator ma przed wywołaniem funkcji sprawdzić, czy typy przekazanych argumentów zgadzają się z oczekiwanymi, i w razie niezgodności rzucić TypeError. Zastosuj go do funkcji `concat_strings(a, b)`.
+
+20. Napisz funkcję `create_dispatcher()`, która zwraca dwie funkcje wewnętrzne — `register(name, func)` do rejestrowania funkcji pod podaną nazwą oraz `call(name, *args, **kwargs)` do wywoływania zarejestrowanej funkcji z dowolnymi argumentami. Przetestuj mechanizm, rejestrując trzy funkcje o różnych sygnaturach i wywołując je przez dispatcher z różnymi kombinacjami argumentów pozycyjnych, kluczowych i domyślnych.
