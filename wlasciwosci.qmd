@@ -1,0 +1,43 @@
+# Właściwości
+
+Poza klasą należy stworzyć co najmniej jeden obiekt i przetestować właściwości.
+
+1. Stwórz klasę `Circle` z prywatnym atrybutem `__radius`. Dodaj właściwość `radius`, która zwraca wartość promienia oraz setter, który ustawia promień tylko jeśli podana wartość jest liczbą dodatnią.
+
+2. Stwórz klasę `Person` z prywatnym atrybutem `__name`. Dodaj właściwość `name` z getterem zwracającym imię oraz setterem, który przyjmuje wyłącznie wartości typu `str`.
+
+3. Stwórz klasę `Temperature` z prywatnym atrybutem `__celsius`. Dodaj właściwość `celsius` z getterem i setterem oraz właściwość tylko do odczytu `fahrenheit`, która zwraca temperaturę przeliczoną na stopnie Fahrenheita.
+
+4. Stwórz klasę `Product` z prywatnymi atrybutami `__name` i `__price`. Dodaj właściwości dla obu atrybutów. Setter dla `price` powinien akceptować tylko wartości typu `int` lub `float` większe lub równe zero.
+
+5. Stwórz klasę `Rectangle` z prywatnymi atrybutami `__width` i `__height`. Dodaj właściwości z walidacją (wartości dodatnie) oraz właściwość tylko do odczytu `area`, która zwraca pole prostokąta.
+
+6. Stwórz klasę `Student` z prywatnym atrybutem `__grades` będącym listą. Dodaj właściwość `grades`, której getter zwraca kopię listy, a setter przyjmuje tylko listy zawierające wyłącznie liczby całkowite z zakresu 1–6.
+
+7. Stwórz klasę `Email` z prywatnym atrybutem `__address`. Dodaj właściwość `address`, której setter waliduje, czy podany ciąg znaków zawiera dokładnie jeden znak `@` oraz co najmniej jedną kropkę po nim.
+
+8. Stwórz klasę `BankAccount` z prywatnymi atrybutami `__owner` i `__balance`. Dodaj właściwość `balance` tylko do odczytu oraz właściwość `owner`, której setter akceptuje jedynie niepuste ciągi znaków o długości co najmniej 2 znaków.
+
+9. Stwórz klasę `Playlist` z prywatnym atrybutem `__songs` (lista stringów). Dodaj właściwość `songs`, której getter zwraca kopię listy, a setter przyjmuje wyłącznie listy, w których każdy element jest typu `str` i nie jest pusty.
+
+10. Stwórz klasę `Config` z prywatnym atrybutem `__settings` będącym słownikiem. Dodaj właściwość `settings`, której getter zwraca kopię słownika, a setter akceptuje tylko słowniki, w których zarówno klucze, jak i wartości są typu `str`.
+
+11. Stwórz klasę `Password` z prywatnym atrybutem `__value`. Dodaj właściwość `value`, której getter zwraca zamaskowaną postać hasła (np. `"****"`), a setter akceptuje jedynie ciągi znaków o długości co najmniej 8, zawierające przynajmniej jedną cyfrę i jedną wielką literę.
+
+12. Stwórz klasę `DateRange` z prywatnymi atrybutami `__start` i `__end` (obiekty `datetime.date`). Dodaj właściwości dla obu atrybutów, przy czym setter `end` powinien sprawdzać, czy data końcowa nie jest wcześniejsza niż data początkowa, a setter `start` — czy nie jest późniejsza niż data końcowa.
+
+13. Stwórz klasę `Inventory` z prywatnym atrybutem `__items` będącym słownikiem mapującym nazwy produktów (str) na ilości (int). Dodaj właściwość `items`, której getter zwraca kopię słownika, a setter waliduje, czy wszystkie klucze są niepustymi stringami i czy wartości są nieujemnymi liczbami całkowitymi.
+
+14. Stwórz klasę `RGBColor` z prywatnymi atrybutami `__red`, `__green`, `__blue`. Dodaj właściwość dla każdego kanału z setterem akceptującym wyłącznie liczby całkowite z zakresu 0–255 oraz właściwość tylko do odczytu `hex`, zwracającą kolor w formacie szesnastkowym (np. `"#ff00ab"`).
+
+15. Stwórz klasę `Matrix` z prywatnym atrybutem `__data` będącym listą list (macierz 2D). Dodaj właściwość `data`, której setter sprawdza, czy podana wartość jest niepustą listą list, czy wszystkie wiersze mają tę samą długość i czy wszystkie elementy są liczbami (int lub float).
+
+16. Stwórz klasę `UserProfile` z prywatnymi atrybutami `__username`, `__age` i `__tags` (lista stringów). Dodaj właściwości dla każdego atrybutu: `username` akceptuje tylko ciągi alfanumeryczne o długości 3–20 znaków, `age` akceptuje liczby całkowite z zakresu 0–150, a `tags` akceptuje listy unikatowych, niepustych ciągów znaków o maksymalnej długości listy 10.
+
+17. Stwórz klasę `WeightedGrades` z prywatnym atrybutem `__grades` będącym słownikiem mapującym nazwy przedmiotów (str) na krotki `(ocena, waga)`, gdzie ocena to float z zakresu 2.0–5.0, a waga to float z zakresu 0.0–1.0. Dodaj właściwość `grades` z odpowiednią walidacją oraz właściwość tylko do odczytu `weighted_average`, zwracającą średnią ważoną.
+
+18. Stwórz klasę `IPAddress` z prywatnym atrybutem `__address`. Dodaj właściwość `address`, której setter waliduje, czy podany ciąg znaków jest poprawnym adresem IPv4 — czyli składa się z dokładnie czterech grup liczb całkowitych z zakresu 0–255, rozdzielonych kropkami. Dodaj właściwość tylko do odczytu `is_private`, zwracającą `True`, jeśli adres należy do zakresu prywatnego (np. 192.168.x.x, 10.x.x.x).
+
+19. Stwórz klasę `Schedule` z prywatnym atrybutem `__entries` będącym słownikiem, gdzie kluczem jest dzień tygodnia (str spośród: "Monday"–"Sunday"), a wartością lista krotek `(start_hour, end_hour)` reprezentujących bloki czasowe (int, zakres 0–23). Setter powinien walidować poprawność kluczy, formatu krotek, zakresów godzin oraz to, że bloki czasowe w ramach jednego dnia się nie nakładają. Dodaj właściwość tylko do odczytu `total_hours`.
+
+20. Stwórz klasę `Document` z prywatnymi atrybutami `__title` (str, 1–200 znaków), `__authors` (lista niepustych stringów, co najmniej 1 autor), `__metadata` (słownik str→str) oraz `__version` (str w formacie semantycznym, np. "1.2.3"). Dodaj właściwości z pełną walidacją dla każdego atrybutu. Setter `version` powinien dodatkowo sprawdzać, czy nowa wersja jest wyższa niż aktualna. Dodaj właściwość tylko do odczytu `summary`, zwracającą sformatowany ciąg znaków zawierający tytuł, autorów i wersję.

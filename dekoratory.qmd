@@ -1,0 +1,43 @@
+# Dekoratory
+
+Poza definicją dekoratora należy go wywołać co najmniej raz.
+
+1. Napisz dekorator `call_counter`, który zlicza, ile razy dana funkcja została wywołana. Licznik przechowuj jako atrybut funkcji opakowującej. Po każdym wywołaniu wypisz na konsolę aktualną wartość licznika.
+
+2. Napisz dekorator `log_call`, który przed wywołaniem funkcji wypisuje jej nazwę, a po wywołaniu wypisuje zwróconą wartość. Użyj atrybutu `__name__` oryginalnej funkcji.
+
+3. Napisz dekorator `timer`, który mierzy czas wykonania funkcji w sekundach (moduł `time`) i wypisuje go po zakończeniu. Zwróć wynik oryginalnej funkcji bez zmian.
+
+4. Napisz dekorator `suppress_errors`, który przechwytuje wszystkie wyjątki rzucane przez funkcję, wypisuje komunikat z treścią błędu i zwraca `None` zamiast propagować wyjątek.
+
+5. Napisz dekorator `repeat(n)`, który przyjmuje argument `n` i powoduje, że dekorowana funkcja zostaje wywołana `n` razy z tymi samymi argumentami. Dekorator zwraca wynik ostatniego wywołania.
+
+6. Napisz dekorator `cache_result`, który zapamiętuje wyniki wywołań funkcji w słowniku, używając argumentów pozycyjnych jako klucza. Jeśli funkcja została już wywołana z tymi samymi argumentami, zwróć wynik ze słownika bez ponownego wywołania.
+
+7. Napisz dekorator `validate_types`, który przyjmuje typy jako argumenty pozycyjne (np. `@validate_types(int, int)`). Przed wywołaniem funkcji sprawdź, czy przekazane argumenty mają odpowiednie typy. Jeśli nie, rzuć `TypeError` z opisowym komunikatem.
+
+8. Napisz dekorator `retry(max_attempts, delay)`, który w przypadku wyjątku ponawia wywołanie funkcji do `max_attempts` razy, odczekując `delay` sekund między próbami. Jeśli wszystkie próby się nie powiodą, rzuć ostatni wyjątek.
+
+9. Napisz dekorator `flatten_result`, który po wywołaniu funkcji sprawdza, czy wynik jest zagnieżdżoną listą (listą list). Jeśli tak, spłaszcza ją do jednopoziomowej listy. Jeśli wynik nie jest listą, zwraca go bez zmian.
+
+10. Napisz dekorator `sort_result(key=None, reverse=False)`, który sortuje wynik funkcji, jeśli jest on listą. Parametry `key` i `reverse` działają tak samo jak w funkcji wbudowanej `sorted`. Jeśli wynik nie jest listą, zwróć go bez zmian.
+
+11. Napisz dekorator `transform_keys(func)`, który przyjmuje funkcję transformującą (np. `str.upper`). Jeśli dekorowana funkcja zwraca słownik, zastosuj transformację do wszystkich kluczy tego słownika. Jeśli wynik nie jest słownikiem, zwróć go bez zmian.
+
+12. Napisz dekorator `ensure_keys(*required_keys)`, który sprawdza, czy słownik zwrócony przez dekorowaną funkcję zawiera wszystkie wymagane klucze. Jeśli brakuje któregoś klucza, rzuć `KeyError` z listą brakujących kluczy. Jeśli wynik nie jest słownikiem, rzuć `TypeError`.
+
+13. Napisz dekorator `paginate(page_size)`, który przyjmuje rozmiar strony. Jeśli dekorowana funkcja zwraca listę, dekorator zamienia ją na listę podlist, z których każda ma co najwyżej `page_size` elementów. Jeśli wynik nie jest listą, zwróć go bez zmian.
+
+14. Napisz dekorator `filter_result(predicate)`, który przyjmuje funkcję filtrującą. Jeśli dekorowana funkcja zwraca listę, dekorator pozostawia tylko te elementy, dla których `predicate` zwraca `True`. Jeśli wynik nie jest listą, zwróć go bez zmian.
+
+15. Napisz dekorator `default_args(**defaults)`, który przyjmuje domyślne wartości argumentów nazwanych. Jeśli dekorowana funkcja zostanie wywołana bez któregoś z tych argumentów, dekorator automatycznie go doda. Użyj modułu `inspect` do zbadania sygnatury funkcji.
+
+16. Napisz dekorator `audit_log(log_list)`, który przyjmuje zewnętrzną listę jako argument. Po każdym wywołaniu dekorowanej funkcji dopisuje do tej listy słownik zawierający klucze: `function_name`, `args`, `kwargs`, `result` oraz `timestamp` (użyj `datetime.datetime.now()`).
+
+17. Napisz dekorator `compose(*decorators)`, który przyjmuje dowolną liczbę innych dekoratorów i stosuje je kolejno do dekorowanej funkcji (pierwszy dekorator na liście opakowuje funkcję jako pierwszy, ostatni jako ostatni). Przetestuj go, łącząc co najmniej dwa wcześniej napisane dekoratory.
+
+18. Napisz dekorator `rate_limit(max_calls, period)`, który pozwala na co najwyżej `max_calls` wywołań dekorowanej funkcji w ciągu `period` sekund. Jeśli limit zostanie przekroczony, rzuć wyjątek `RuntimeError` z informacją, ile sekund zostało do odblokowania.
+
+19. Napisz dekorator `dispatch_on_type`, który rejestruje różne implementacje funkcji w zależności od typu pierwszego argumentu. Dekorator udostępnia metodę `register(type, func)` na funkcji opakowującej. Przy wywołaniu sprawdza typ pierwszego argumentu i deleguje do odpowiedniej zarejestrowanej implementacji. Jeśli typ nie jest zarejestrowany, wywołuje domyślną funkcję.
+
+20. Napisz dekorator `pipeline(*transformers)`, który przyjmuje dowolną liczbę funkcji transformujących. Po wywołaniu dekorowanej funkcji przepuszcza jej wynik kolejno przez każdy transformer. Jeśli którykolwiek transformer rzuci wyjątek, przerwij łańcuch, wypisz komunikat diagnostyczny ze wskazaniem, który transformer zawiódł, i zwróć wynik sprzed tego kroku.

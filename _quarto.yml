@@ -20,6 +20,10 @@ book:
     - part: "Programowanie obiektowe"
       chapters:
         - inicjalizator.qmd
+        - wlasciwosci.qmd
+    - part: "Zaawansowane zagadnienia"
+      chapters:
+        - dekoratory.qmd
   downloads: pdf
   repo-url: https://github.com/pjastr/zbior-zadan-python
   repo-actions: [issue]
