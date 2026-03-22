@@ -1,0 +1,41 @@
+# Emulacja porównania
+
+1. Napisz klasę Temperature z atrybutem degrees. Zaimplementuj metodę `__eq__`, która porównuje dwa obiekty tej klasy na podstawie wartości degrees. Sprawdź działanie operatora `==` na dwóch instancjach.
+
+2. W klasie Product z atrybutami name i price zaimplementuj metodę `__lt__`, tak aby operator `<` porównywał produkty po cenie. Utwórz trzy obiekty i sprawdź wynik porównania.
+
+3. Rozszerz klasę Product z poprzedniego zadania o metodę `__le__`. Upewnij się, że metoda poprawnie obsługuje przypadek, gdy ceny są równe.
+
+4. Napisz klasę Student z atrybutami name i grade. Zaimplementuj metody `__eq__` i `__lt__`, a następnie posortuj listę studentów za pomocą wbudowanej funkcji `sorted()`.
+
+5. W klasie DataPoint z atrybutami label i value zaimplementuj metodę `__eq__`, która zwraca `NotImplemented`, gdy other nie jest instancją DataPoint. Wyjaśnij w komentarzu, dlaczego zwracamy `NotImplemented` zamiast `False`.
+
+6. Napisz klasę Rectangle z atrybutami width i height. Zaimplementuj metody `__eq__`, `__lt__` i `__gt__`, tak aby porównania opierały się na polu prostokąta.
+
+7. Użyj dekoratora `@functools.total_ordering` w klasie Score z atrybutem points. Zdefiniuj tylko `__eq__` i `__lt__`, a następnie przetestuj działanie wszystkich sześciu operatorów porównania (`==`, `!=`, `<`, `<=`, `>`, `>=`).
+
+8. Napisz klasę SemanticVersion z atrybutami major, minor i patch. Zaimplementuj metody `__eq__` i `__lt__` porównujące wersje leksykograficznie (najpierw major, potem minor, potem patch). Posortuj listę wersji.
+
+9. W klasie Interval z atrybutami start i end zaimplementuj metodę `__eq__` porównującą oba końce przedziału oraz `__lt__` porównującą przedziały po ich długości. Sprawdź, czy dwa przedziały o różnych końcach, ale tej samej długości, nie są sobie równe.
+
+10. Napisz klasę Employee z atrybutami name, department i salary. Zaimplementuj `__eq__` porównujące po name i department (bez salary) oraz `__lt__` porównujące wyłącznie po salary. Zastanów się w komentarzu, jakie konsekwencje ma taka niespójna definicja równości i porządku.
+
+11. Napisz klasę Vector2D z atrybutami x i y. Zaimplementuj `__eq__` porównujące oba składniki. Następnie zdefiniuj `__lt__` porównujące wektory po ich długości euklidesowej. Dodaj type hints do wszystkich metod.
+
+12. W klasie Exam z atrybutami subject i score zaimplementuj `__eq__` i `__lt__`. Następnie utwórz listę obiektów Exam i wyznacz z niej element maksymalny za pomocą wbudowanej funkcji `max()` — bez podawania parametru key.
+
+13. Napisz klasę TemperatureReading z atrybutem celsius. Zaimplementuj metody `__eq__` i `__lt__`, które porównują temperatury z zadaną tolerancją epsilon (np. 0.01). Dwie temperatury różniące się o mniej niż epsilon powinny być uznawane za równe.
+
+14. Stwórz klasę Money z atrybutami amount i currency. Zaimplementuj `__eq__` i `__lt__`, które zgłaszają wyjątek ValueError, gdy próbujemy porównać kwoty w różnych walutach. Przetestuj oba scenariusze — zgodne i niezgodne waluty.
+
+15. Napisz klasę Card z atrybutami rank i suit, reprezentującą kartę do gry. Zdefiniuj słownik z porządkiem rang (np. "2" do "A") i zaimplementuj `__eq__` oraz `__lt__` uwzględniające ten porządek. Użyj `@total_ordering`. Posortuj talię pięciu kart.
+
+16. W klasie TimeSeries przechowującej listę wartości zaimplementuj `__eq__`, który porównuje serie element po elemencie, oraz `__lt__`, który porównuje serie po ich średniej arytmetycznej. Obsłuż przypadek serii o różnych długościach w `__eq__` (powinny być nierówne).
+
+17. Napisz klasę Matrix2x2 przechowującą macierz 2x2 jako listę list. Zaimplementuj `__eq__` porównujące element po elemencie. Zdefiniuj `__lt__` porównujące macierze po ich wyznacznikach (determinant). Dodaj metodę `__repr__` wyświetlającą macierz w czytelny sposób.
+
+18. Stwórz hierarchię klas: bazową Shape oraz pochodne Circle i Square. W klasie Shape zdefiniuj abstrakcyjne metody area(). Zaimplementuj `__eq__` i `__lt__` w klasie Shape porównujące po area(). Sprawdź, czy porównanie Circle z Square działa poprawnie dzięki dziedziczeniu.
+
+19. Napisz klasę CacheEntry z atrybutami key, value i priority. Zaimplementuj `__eq__` porównujące po key, a `__lt__` porównujące po priority. Następnie użyj modułu heapq, aby zbudować kolejkę priorytetową opartą na obiektach CacheEntry — heapq wymaga poprawnie zdefiniowanego operatora `<`.
+
+20. Napisz klasę DataFrame (uproszczoną) przechowującą słownik kolumn (nazwa -> lista wartości). Zaimplementuj `__eq__` sprawdzające równość struktury i danych kolumna po kolumnie. Zdefiniuj `__lt__` porównujące ramki po liczbie wierszy. Dodatkowo zaimplementuj `__hash__` tak, aby obiekty DataFrame były niehasowalne (jak w pandas) — przypisz `__hash__ = None` — i wyjaśnij w komentarzu, dlaczego zmiana `__eq__` wymaga przemyślenia `__hash__`.

@@ -21,13 +21,21 @@ book:
       chapters:
         - inicjalizator.qmd
         - wlasciwosci.qmd
+        - dziedziczenie_polimorfizm.qmd
+        - repr_str.qmd
+        - kontenery.qmd
+        - emulacja_arytmetyki.qmd
+        - emulacja_porownania.qmd
     - part: "Zaawansowane zagadnienia"
       chapters:
         - dekoratory.qmd
-  downloads: pdf
+  downloads: [pdf, epub]
   repo-url: https://github.com/pjastr/zbior-zadan-python
   repo-actions: [issue]
 
+
+execute:
+  freeze: auto
 
 format:
   html:
@@ -39,7 +47,9 @@ format:
     lang: pl
     header-includes: |
       \titlehead{\includegraphics[width=6in]{pop.jpg}}
+  epub:
+    lang: pl
+    cover-image: pop.jpg
+    toc: true
 
-
-editor: visual
 

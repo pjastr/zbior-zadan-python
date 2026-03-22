@@ -1,0 +1,41 @@
+# Reprezentacje tekstowe obiektów
+
+1. Zdefiniuj klasę `Dog` z atrybutami `name` i `breed`. Zaimplementuj metodę `__str__`, która zwróci tekst w formacie `name (breed)`.
+
+2. Zdefiniuj klasę `Point` z atrybutami `x` i `y`. Zaimplementuj metodę `__repr__`, która zwróci tekst umożliwiający odtworzenie obiektu, np. `Point(3, 5)`.
+
+3. Zdefiniuj klasę `Book` z atrybutami `title` i `author`. Zaimplementuj obie metody — `__str__` i `__repr__` — tak, aby zwracały różne reprezentacje tego samego obiektu.
+
+4. Stwórz klasę `Temperature` z atrybutem `celsius`. Metoda `__str__` ma zwracać wartość z jednostką, np. `36.6°C`, a `__repr__` — wyrażenie konstruktora `Temperature(36.6)`.
+
+5. Zdefiniuj klasę `Color` z atrybutami `r`, `g`, `b`. Zaimplementuj `__repr__` tak, aby spełniał warunek `eval(repr(obj)) == obj` (wymaga to również zdefiniowania `__eq__`).
+
+6. Stwórz klasę `Student` z atrybutami `first_name`, `last_name` i `grade`. Zaimplementuj `__str__` zwracającą przyjazny opis ucznia, a `__repr__` — jednoznaczną reprezentację techniczną.
+
+7. Napisz klasę `Fraction` z atrybutami `numerator` i `denominator`. Metoda `__str__` ma wyświetlać ułamek w formacie `3/4`, a `__repr__` — w formacie `Fraction(3, 4)`.
+
+8. Zdefiniuj klasę `Product` z atrybutami `name` i `price`. Umieść kilka obiektów tej klasy w liście, a następnie wypisz tę listę za pomocą `print()`. Zaobserwuj, która metoda — `__str__` czy `__repr__` — zostaje wywołana dla elementów listy.
+
+9. Stwórz klasę `Vector2D` z atrybutami `x` i `y`. Zaimplementuj `__repr__` i `__str__`, a następnie sprawdź, co zwraca `f"{obj}"`, `str(obj)`, `repr(obj)` oraz wypisanie obiektu w interpreterze interaktywnym.
+
+10. Napisz klasę `LogEntry` z atrybutami `timestamp`, `level` i `message`. Metoda `__str__` ma zwracać czytelny wpis logu, a `__repr__` — pełną reprezentację z wszystkimi atrybutami przydatną do debugowania.
+
+11. Zdefiniuj klasę `Currency` z atrybutami `amount` i `code` (np. `"PLN"`, `"USD"`). Zaimplementuj `__str__` formatującą kwotę z symbolem waluty, a `__repr__` — z pełną precyzją dziesiętną.
+
+12. Stwórz klasę `Matrix` przechowującą dwuwymiarową listę liczb. Zaimplementuj `__str__` tak, aby wyświetlała macierz w czytelnej formie wierszowej, a `__repr__` — jako jednoliniowe wyrażenie konstruktora.
+
+13. Zdefiniuj klasę bazową `Shape` z metodą `__repr__`, która automatycznie odczytuje nazwę klasy z `type(self).__name__`. Następnie stwórz klasy pochodne `Circle` i `Rectangle`, które dziedziczą tę implementację i dodają własne atrybuty.
+
+14. Napisz klasę `LinkedList` z węzłami typu `Node`. Zaimplementuj `__repr__` dla klasy `LinkedList` tak, aby wyświetlała całą zawartość listy w formacie `LinkedList(1 -> 2 -> 3)`.
+
+15. Stwórz klasę `Person` z atrybutem `secret_code`, który nie powinien pojawiać się w wynikach `__str__` (wyświetlanym użytkownikowi), ale powinien być widoczny w `__repr__` (przeznaczonym dla programisty).
+
+16. Zdefiniuj klasę `Config` przechowującą słownik ustawień. Zaimplementuj `__repr__`, który wyświetla posortowane klucze i ich wartości, oraz `__str__`, który wyświetla jedynie liczbę kluczy i nazwy trzech pierwszych.
+
+17. Napisz dekorator klasy `auto_repr`, który automatycznie generuje metodę `__repr__` na podstawie atrybutów przekazanych do `__init__`. Przetestuj go na co najmniej dwóch różnych klasach.
+
+18. Stwórz hierarchię klas `Animal` -> `Mammal` -> `Cat`. Na każdym poziomie zaimplementuj `__repr__` z wywołaniem `super().__repr__()` i dołączeniem atrybutów specyficznych dla danego poziomu. Przeanalizuj wynikowy łańcuch reprezentacji.
+
+19. Zdefiniuj klasę `LazyRepr`, w której metoda `__repr__` wykonuje kosztowną operację (np. symulowaną przez `time.sleep`). Następnie napisz zoptymalizowaną wersję z cache'owaniem wyniku `__repr__` przy użyciu techniki memoizacji i porównaj czasy wykonania.
+
+20. Napisz metaklasę `ReprEnforcerMeta`, która przy tworzeniu klasy sprawdza, czy klasa definiuje zarówno `__str__`, jak i `__repr__`. Jeśli brakuje którejkolwiek z tych metod, metaklasa powinna podnieść wyjątek `TypeError` z odpowiednim komunikatem.

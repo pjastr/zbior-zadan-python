@@ -1,0 +1,37 @@
+# Dziedziczenie i polimorfizm
+
+1. Stwórz klasę `Animal` z atrybutem `name` oraz metodą `speak()`, która zwraca ogólny komunikat. Następnie stwórz klasę `Dog`, która dziedziczy po `Animal` i nadpisuje metodę `speak()` tak, aby zwracała dźwięk psa.
+
+2. Zdefiniuj klasę `Shape` z metodą `area()` zwracającą 0. Utwórz klasy `Rectangle` i `Circle`, które dziedziczą po `Shape` i implementują własne wersje `area()` z odpowiednimi obliczeniami.
+
+3. Napisz klasę `Vehicle` z atrybutami `brand` i `max_speed` oraz metodą `describe()`. Stwórz klasę `ElectricCar` dziedziczącą po `Vehicle`, która dodaje atrybut `battery_capacity` i rozszerza metodę `describe()` o informację o baterii.
+
+4. Utwórz klasę `Employee` z atrybutami `name` i `salary` oraz metodą `get_bonus()` zwracającą 10% pensji. Stwórz klasę `Manager` dziedziczącą po `Employee`, w której `get_bonus()` zwraca 20% pensji. Zademonstruj użycie obu klas w jednej liście i iterację po niej.
+
+5. Zdefiniuj klasę `Logger` z metodą `log(message)`. Stwórz klasy `FileLogger` i `ConsoleLogger`, które dziedziczą po `Logger` i nadpisują `log()` tak, aby wypisywały wiadomość z odpowiednim prefiksem wskazującym miejsce zapisu. Napisz funkcję `process(logger)`, która przyjmuje dowolny obiekt typu `Logger` i wywołuje na nim `log()`.
+
+6. Stwórz klasę `BankAccount` z metodami `deposit(amount)`, `withdraw(amount)` i `get_balance()`. Następnie utwórz klasę `SavingsAccount`, która dziedziczy po `BankAccount`, ale nadpisuje `withdraw()` tak, aby nie pozwalała na wypłatę, jeśli saldo spadłoby poniżej ustalonego minimum.
+
+7. Napisz klasę `Notification` z metodą `send(recipient, text)`. Stwórz trzy klasy pochodne: `EmailNotification`, `SmsNotification` i `PushNotification`, z których każda nadpisuje `send()` i wypisuje komunikat odpowiedni dla danego kanału. Napisz funkcję `broadcast(notifications, recipient, text)`, która iteruje po liście powiadomień i wysyła je polimorficznie.
+
+8. Zdefiniuj klasę `Converter` z metodą `convert(value)`, która zwraca wartość bez zmian. Stwórz klasy `CelsiusToFahrenheit` i `KilometersToMiles` dziedziczące po `Converter`, które nadpisują `convert()` właściwymi formułami. Użyj funkcji `isinstance()`, aby sprawdzić typ obiektu przed konwersją.
+
+9. Stwórz hierarchię klas: `Media` (z atrybutem `title`), a po niej dziedziczące `Book` (z `author` i `pages`), `Movie` (z `director` i `duration`) i `Podcast` (z `host` i `episodes`). Każda klasa powinna mieć metodę `info()` zwracającą opis. Napisz funkcję, która przyjmuje listę obiektów `Media` i wypisuje informacje o każdym z nich.
+
+10. Utwórz klasę `PaymentMethod` z metodą `pay(amount)`. Stwórz klasy `CreditCard`, `PayPal` i `BankTransfer`, które dziedziczą po `PaymentMethod`. Każda klasa powinna nadpisywać `pay()` i dodatkowo implementować metodę `validate()` sprawdzającą poprawność danych. W klasie `CreditCard` użyj `super()` do wywołania bazowej wersji `pay()` przed dodaniem własnej logiki.
+
+11. Napisz klasę `TaskRunner` z metodami `setup()`, `execute()` i `teardown()` oraz metodą `run()`, która wywołuje te trzy metody w kolejności. Stwórz klasy `DatabaseTask` i `ApiTask`, które dziedziczą po `TaskRunner` i nadpisują `setup()`, `execute()` i `teardown()` własnymi implementacjami, ale nie zmieniają metody `run()` — to przykład wzorca Template Method.
+
+12. Zdefiniuj klasę `User` z atrybutami `username` i `role` oraz metodą `permissions()` zwracającą pustą listę. Stwórz klasy `Admin`, `Editor` i `Viewer` dziedziczące po `User`, z których każda zwraca inną listę uprawnień. Napisz funkcję `check_access(user, required_permission)`, która sprawdza, czy dany użytkownik ma wymagane uprawnienie, korzystając z polimorfizmu.
+
+13. Stwórz klasę abstrakcyjną `Validator` (używając modułu `abc`) z abstrakcyjną metodą `validate(data)`. Utwórz klasy `EmailValidator`, `PhoneValidator` i `AgeValidator`, które implementują `validate()` i zwracają `True` lub `False` w zależności od poprawności danych. Napisz funkcję `run_validations(validators, data)`, która uruchamia wszystkie walidatory i zbiera wyniki.
+
+14. Zdefiniuj klasę `Plugin` z metodami `activate()` i `process(data)`. Stwórz co najmniej trzy klasy pochodne reprezentujące różne wtyczki (np. `UpperCasePlugin`, `TrimPlugin`, `ReplacePlugin`). Napisz klasę `Pipeline`, która przechowuje listę wtyczek i posiada metodę `run(data)` przepuszczającą dane przez kolejne wtyczki polimorficznie.
+
+15. Stwórz przykład dziedziczenia wielokrotnego: klasę `Flyable` z metodą `fly()`, klasę `Swimmable` z metodą `swim()` oraz klasę `Duck`, która dziedziczy po obu. Zbadaj kolejność rozwiązywania metod (MRO) za pomocą `Duck.__mro__` i napisz krótki komentarz wyjaśniający wynik.
+
+16. Zdefiniuj klasę `EventEmitter` z metodami `on(event_name, callback)` i `emit(event_name, *args)`. Stwórz klasę `ChatRoom` dziedziczącą po `EventEmitter`, która dodaje metody `join(user)`, `leave(user)` i `send_message(user, text)`, a każda z nich emituje odpowiednie zdarzenie. Następnie stwórz klasę `ModeratedChatRoom` dziedziczącą po `ChatRoom`, która nadpisuje `send_message()` i filtruje niedozwolone słowa przed wysłaniem.
+
+17. Stwórz system serializacji: klasę `Serializer` z metodami `serialize(obj)` i `deserialize(data)`. Utwórz klasy `JsonSerializer`, `CsvSerializer` i `XmlSerializer`, które implementują te metody. Następnie napisz klasę `DataStore`, która w konstruktorze przyjmuje obiekt typu `Serializer` (kompozycja) i używa go do zapisywania i odczytywania danych — porównaj to podejście z dziedziczeniem i opisz w komentarzu, kiedy kompozycja jest lepsza.
+
+18. Zdefiniuj metaklasę `SingletonMeta`, która sprawia, że każda klasa, która ją wykorzystuje, może mieć tylko jedną instancję. Stwórz klasę `DatabaseConnection` używającą tej metaklasy. Następnie stwórz klasę `PooledDatabaseConnection` dziedziczącą po `DatabaseConnection` i sprawdź, czy mechanizm singletona działa również dla klasy pochodnej. Opisz wynik w komentarzach.

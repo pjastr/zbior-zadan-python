@@ -1,0 +1,41 @@
+# Emulacja kontenerów
+
+1. Zdefiniuj klasę `MyList` opakowującą zwykłą listę. Zaimplementuj metodę `__len__`, która zwraca liczbę elementów, i przetestuj działanie wbudowanej funkcji `len()` na obiekcie tej klasy.
+
+2. Stwórz klasę `Sentence` przechowującą tekst jako string. Zaimplementuj `__len__` tak, aby zwracała liczbę słów w zdaniu, a nie liczbę znaków.
+
+3. Zdefiniuj klasę `ColorPalette` przechowującą listę kolorów. Zaimplementuj `__getitem__`, aby można było pobierać kolory po indeksie, np. `palette[2]`.
+
+4. Rozszerz klasę `ColorPalette` o metodę `__setitem__`, umożliwiającą podmianę koloru pod wskazanym indeksem, np. `palette[0] = "red"`.
+
+5. Napisz klasę `Matrix` przechowującą dane w płaskiej liście. Zaimplementuj `__getitem__` przyjmującą krotkę `(row, col)`, aby dostęp do elementów wyglądał jak `matrix[2, 3]`.
+
+6. Stwórz klasę `DefaultDict` emulującą słownik z wartością domyślną. Zaimplementuj `__getitem__` tak, aby dla nieistniejącego klucza zwracała podaną przy inicjalizacji wartość zamiast rzucać `KeyError`.
+
+7. Zdefiniuj klasę `Scoreboard` przechowującą wyniki graczy w słowniku. Zaimplementuj `__getitem__`, `__setitem__` i `__len__`, a następnie przetestuj na niej operacje `board["Alice"]`, `board["Bob"] = 10` oraz `len(board)`.
+
+8. Napisz klasę `ImmutableList`, która implementuje `__getitem__` i `__len__`, ale celowo nie definiuje `__setitem__`. Sprawdź, jaki wyjątek zostanie rzucony przy próbie przypisania wartości do elementu.
+
+9. Stwórz klasę `RangeMap`, w której `__getitem__` przyjmuje liczbę całkowitą i zwraca nazwę zakresu, do którego ta liczba należy (np. `0-10` to `"low"`, `11-20` to `"medium"`). Zakresy definiowane są przy inicjalizacji.
+
+10. Zdefiniuj klasę `CircularBuffer` o stałym rozmiarze. Zaimplementuj `__getitem__`, `__setitem__` i `__len__` tak, aby indeksy wykraczające poza rozmiar bufora automatycznie zawijały się cyklicznie.
+
+11. Napisz klasę `SparseVector` przechowującą jedynie niezerowe elementy w słowniku. Zaimplementuj `__getitem__` (zwracającą `0` dla brakujących indeksów), `__setitem__` (usuwającą klucz przy ustawieniu wartości `0`) oraz `__len__` (zwracającą logiczny rozmiar wektora).
+
+12. Stwórz klasę `History` emulującą kontener z możliwością cofania zmian. Metoda `__setitem__` powinna zapisywać poprzednią wartość klucza na stosie, a dodatkowa metoda `undo(key)` powinna przywracać ostatnią wartość.
+
+13. Zdefiniuj klasę `SliceableString`, która implementuje `__getitem__` z pełnym wsparciem dla wycinków (slice). Wyrażenie `obj[1:5]` powinno zwracać nowy obiekt `SliceableString`, a `obj[0]` — pojedynczy znak.
+
+14. Napisz klasę `Table` z danymi w formie listy słowników. Zaimplementuj `__getitem__` tak, aby obsługiwała trzy tryby dostępu — po indeksie wiersza (int), po nazwie kolumny (string) oraz po krotce `(row_index, column_name)`.
+
+15. Stwórz klasę `ValidatedList`, w której `__setitem__` sprawdza typ wstawianej wartości i rzuca `TypeError`, jeśli nie jest on zgodny z typem podanym przy inicjalizacji (np. `ValidatedList(int)`).
+
+16. Zdefiniuj klasę `NestedDict` umożliwiającą dostęp do zagnieżdżonych danych za pomocą klucza w formie ścieżki z kropkami, np. `config["database.host"]` zamiast `config["database"]["host"]`. Zaimplementuj zarówno `__getitem__`, jak i `__setitem__`.
+
+17. Napisz klasę `TimeSeries` przechowującą pary `(datetime, value)`. Zaimplementuj `__getitem__` tak, aby akceptowała zarówno indeks liczbowy, jak i obiekt `datetime` (wyszukujący najbliższy punkt w czasie), a także wycinek z obiektami `datetime` jako granicami zakresu.
+
+18. Stwórz klasę `ChainMap` przyjmującą kilka słowników w konstruktorze. Zaimplementuj `__getitem__` przeszukującą słowniki po kolei, `__setitem__` zapisującą zawsze do pierwszego słownika, oraz `__len__` zwracającą liczbę unikalnych kluczy ze wszystkich słowników.
+
+19. Zdefiniuj klasę `DatabaseTable` emulującą tabelę bazy danych. Zaimplementuj `__getitem__` obsługującą zapytania w stylu `table[lambda row: row["age"] > 18]`, zwracającą nowy obiekt `DatabaseTable` z przefiltrowanymi wierszami. Dodaj `__len__` i `__setitem__` do aktualizacji wierszy spełniających warunek.
+
+20. Napisz klasę `TensorView`, która opakowuje jednowymiarową listę danych i interpretuje ją jako tensor o zadanym kształcie (np. `(2, 3, 4)`). Zaimplementuj `__getitem__` z obsługą wielowymiarowego indeksowania i wycinków na każdym wymiarze, `__setitem__` z analogiczną logiką oraz `__len__` zwracającą rozmiar pierwszego wymiaru. Upewnij się, że widok współdzieli dane z oryginałem.

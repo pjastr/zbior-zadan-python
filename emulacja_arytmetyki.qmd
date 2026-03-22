@@ -1,0 +1,41 @@
+# Emulacja arytmetyki
+
+1. Napisz klasę `Temperature` z atrybutem `celsius`. Zaimplementuj metodę `__add__`, która umożliwi dodawanie dwóch obiektów `Temperature` — wynikiem powinien być nowy obiekt z sumą wartości.
+
+2. Napisz klasę `Counter` przechowującą liczbę całkowitą. Zaimplementuj metody `__add__` i `__sub__`, tak aby można było dodawać i odejmować obiekty `Counter` od siebie za pomocą operatorów `+` i `-`.
+
+3. Napisz klasę `Vector2D` z atrybutami `x` i `y`. Zaimplementuj metodę `__mul__`, która pozwoli pomnożyć wektor przez skalar (liczbę), zwracając nowy wektor ze skalowanymi współrzędnymi.
+
+4. Napisz klasę `Price` przechowującą kwotę jako `float`. Zaimplementuj metodę `__truediv__`, tak aby operator `/` dzielił cenę przez podaną liczbę i zwracał nowy obiekt `Price`.
+
+5. Napisz klasę `Weight` z atrybutem `kg`. Zaimplementuj metody `__add__` i `__sub__` z obsługą dodawania/odejmowania zarówno innego obiektu `Weight`, jak i zwykłej liczby (skalara).
+
+6. Napisz klasę `Wallet` z atrybutem `balance`. Zaimplementuj `__floordiv__` (operator `//`), który dzieli saldo całkowicie przez podaną liczbę, oraz `__mod__` (operator `%`), który zwraca resztę z dzielenia.
+
+7. Napisz klasę `DataSeries` przechowującą listę wartości numerycznych. Zaimplementuj `__add__`, który realizuje dodawanie element po elemencie (elementwise) dwóch obiektów `DataSeries` o tej samej długości. Jeśli długości się nie zgadzają, zgłoś `ValueError`.
+
+8. Napisz klasę `Score` z atrybutem `points`. Zaimplementuj `__radd__`, tak aby wyrażenie `10 + score_obj` poprawnie delegowało operację do obiektu `Score` — przetestuj, że zarówno `score + 10`, jak i `10 + score` działają.
+
+9. Napisz klasę `Matrix1D` przechowującą jednowymiarową listę wartości. Zaimplementuj `__mul__` obsługujący dwa scenariusze: mnożenie przez skalar oraz iloczyn element po elemencie z innym obiektem `Matrix1D`. Dodaj `__rmul__` dla wyrażeń typu `3 * matrix_obj`.
+
+10. Napisz klasę `Measurement` z atrybutami `value` i `unit`. Zaimplementuj `__add__` i `__sub__`, które pozwalają łączyć jedynie pomiary o tym samym `unit` — przy niezgodności jednostek zgłoś `TypeError` z komunikatem informującym o konflikcie.
+
+11. Napisz klasę `Percentage` z atrybutem `value` (np. 75 oznacza 75%). Zaimplementuj `__mul__`, tak aby `Percentage(50) * 200` zwracało `float` równy 100.0 (obliczenie procentu z liczby), a mnożenie dwóch obiektów `Percentage` zwracało nowy obiekt `Percentage` ze złożonym procentem.
+
+12. Napisz klasę `BankAccount` z atrybutem `balance`. Zaimplementuj `__iadd__` i `__isub__` (operatory `+=` i `-=`), tak aby modyfikowały saldo w miejscu. W przypadku `__isub__` zapobiegaj zejściu poniżej zera, zgłaszając `ValueError`.
+
+13. Napisz klasę `ComplexNumber` z atrybutami `real` i `imag`. Zaimplementuj metody `__add__`, `__sub__`, `__mul__` zgodnie z regułami arytmetyki liczb zespolonych. Zaimplementuj również `__repr__`, aby wynik wyświetlał się w formacie `a + bi`.
+
+14. Napisz klasę `Polynomial` reprezentującą wielomian za pomocą listy współczynników (indeks listy odpowiada potędze). Zaimplementuj `__add__` (dodawanie wielomianów) i `__mul__` (mnożenie wielomianów przez skalar). Zwróć uwagę na wielomiany różnych stopni.
+
+15. Napisz klasę `TimeDelta` z atrybutem `seconds`. Zaimplementuj `__add__`, `__sub__`, `__mul__` (mnożenie przez skalar) oraz `__truediv__`. Operator `/` powinien rozróżniać dzielenie przez liczbę (zwraca `TimeDelta`) od dzielenia przez inny `TimeDelta` (zwraca `float` — iloraz czasów).
+
+16. Napisz klasę `Vector3D` z atrybutami `x`, `y`, `z`. Zaimplementuj `__add__`, `__sub__`, `__mul__` (iloczyn skalarny z innym wektorem zwracający `float`, lub skalowanie wektora liczbą), `__rmul__` oraz `__neg__` (operator unarny `-`). Wykorzystaj type hinting i `isinstance` do rozróżniania typów operandów.
+
+17. Napisz klasę `Currency` z atrybutami `amount` i `code` (np. "PLN", "USD"). Zaimplementuj `__add__`, `__sub__`, `__mul__` (przez skalar) i `__truediv__` (przez skalar). Operacje dodawania i odejmowania między różnymi walutami powinny być zabronione (zgłoś `TypeError`). Dodaj metody `__radd__` i `__rmul__` dla przemienności ze skalarami.
+
+18. Napisz klasę `FractionNumber` z atrybutami `numerator` i `denominator`. Zaimplementuj `__add__`, `__sub__`, `__mul__`, `__truediv__` z pełną arytmetyką ułamków (ze sprowadzaniem do wspólnego mianownika). Każda operacja powinna zwracać ułamek w postaci skróconej — wykorzystaj `math.gcd` do upraszczania wyniku.
+
+19. Napisz klasę `SparseVector`, która przechowuje wektor rzadki jako słownik (klucze to indeksy niezerowych elementów). Zaimplementuj `__add__`, `__sub__`, `__mul__` (iloczyn skalarny z innym `SparseVector` zwracający `float`, lub skalowanie przez liczbę). Zadbaj o poprawne łączenie kluczy i usuwanie zer z wynikowego słownika.
+
+20. Napisz rodzinę klas reprezentujących jednostki fizyczne: `Distance` (metry), `Time` (sekundy) i `Speed` (metry na sekundę). Zaimplementuj operatory arytmetyczne tak, aby `Distance / Time` zwracało `Speed`, a `Speed * Time` zwracało `Distance`. Obsłuż również dodawanie i odejmowanie obiektów tego samego typu oraz mnożenie przez skalar. W przypadku nieprawidłowych operacji (np. `Distance + Time`) zgłoś `TypeError`.
