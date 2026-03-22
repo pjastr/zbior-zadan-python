@@ -17,6 +17,7 @@ book:
         - krotki.qmd
         - slowniki.qmd
         - argumenty_funkcji.qmd
+        - fstringi.qmd
     - part: "Programowanie obiektowe"
       chapters:
         - inicjalizator.qmd
@@ -29,6 +30,7 @@ book:
     - part: "Zaawansowane zagadnienia"
       chapters:
         - dekoratory.qmd
+        - re.qmd
   downloads: [pdf, epub]
   repo-url: https://github.com/pjastr/zbior-zadan-python
   repo-actions: [issue]

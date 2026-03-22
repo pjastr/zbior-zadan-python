@@ -1,0 +1,41 @@
+# Wyrażenia regularne
+
+1. Zaimportuj moduł `re` i za pomocą `re.findall()` znajdź w tekście `"Cena: 49.99 PLN, rabat: 10.50 PLN"` wszystkie liczby zmiennoprzecinkowe, używając wzorca `r"\d+\.\d+"`.
+
+2. Wyjaśnij, jaka jest różnica między zapisem wzorca `"\\d+\\.\\d+"` a `r"\d+\.\d+"`. Który z nich jest czytelniejszy i dlaczego?
+
+3. Dany jest string `text = "Raport_2024 raport_2025 RAPORT_2026"`. Użyj `re.findall()` z wzorcem zawierającym `\d{4}`, aby wyodrębnić z niego wszystkie czterocyfrowe liczby.
+
+4. Dany jest string `log = "ERROR: file not found at /data/input.csv"`. Napisz wzorzec z `r"\b...\b"`, który wyszuka w nim dokładnie słowo `file` jako całe słowo (nie jako fragment innego wyrazu).
+
+5. Mając listę `files = ["data.csv", "report.pdf", "sales.xlsx", "model.pkl"]`, napisz wyrażenie z `re.search()` i wzorcem wykorzystującym alternację `(csv|xlsx)` oraz kotwicę `$`, które odfiltruje tylko pliki z rozszerzeniem csv lub xlsx.
+
+6. Dany jest string `record = "  Jan Kowalski  (ur. 1990) "`. Użyj `re.sub()` z odpowiednim wzorcem w r-stringu, aby usunąć z niego fragment w nawiasach zawierający rok urodzenia.
+
+7. Mając string `messy = "Anna   NOWAK   (ur.  1985)"`, zastosuj `re.sub(r"\s+", " ", messy)` do zamiany wielokrotnych białych znaków na pojedynczą spację. Opisz, co robi tu kwantyfikator `+`.
+
+8. Napisz wyrażenie regularne w r-stringu, które dopasuje opcjonalną kropkę po skrócie `ur` — wykorzystaj kwantyfikator `?` we wzorcu `r"ur\.?"`.
+
+9. Zdefiniuj zmienną `column = "price"` i za pomocą rf-stringa utwórz wzorzec `rf"\b{column}\b"`. Następnie użyj `re.findall()` na tekście `"The total_price and price are different"` i wyjaśnij, dlaczego wynik zawiera tylko `"price"`.
+
+10. Mając listę rozszerzeń `extensions = ["csv", "xlsx", "parquet"]`, zbuduj dynamicznie wzorzec regex za pomocą rf-stringa i metody `join()`, tak aby powstał wzorzec `r"\.(csv|xlsx|parquet)$"`.
+
+11. Dany jest string `data = "Wzrost: 180cm, waga: 75kg, wiek: 30lat"`. Napisz wzorzec z `re.findall()`, który wyodrębni wszystkie liczby (ciągi cyfr), korzystając z `r"\d+"`.
+
+12. Mając listę rekordów `raw_data = ["Jan Kowalski (ur. 1990)", "Anna Nowak (ur. 1985)"]`, napisz pętlę `for`, w której za pomocą `re.sub()` usuniesz fragment z rokiem urodzenia, a potem usuniesz nadmiarowe spacje — tak jak w przykładzie z wykładu.
+
+13. Napisz wzorzec w r-stringu, który dopasuje dowolny ciąg białych znaków (`\s+`) otoczony granicami słowa (`\b`). Przetestuj go na stringu `"Hello   World"` za pomocą `re.sub()`, zamieniając wielokrotne spacje na myślnik.
+
+14. Dany jest string `line = "error: timeout at 12:45:30"`. Użyj `re.search()` z wzorcem `r"\d{2}:\d{2}:\d{2}"`, aby znaleźć w nim znacznik czasu. Wyjaśnij rolę kwantyfikatora `{2}` we wzorcu.
+
+15. Mając listę plików `all_files = ["notes.txt", "data.csv", "image.png", "report.xlsx", "archive.parquet"]`, napisz list comprehension z `re.search()` i dynamicznie zbudowanym rf-wzorcem (na podstawie listy rozszerzeń), który zwróci tylko pliki danych.
+
+16. Dany jest tekst `info = "PIOTR   Wiśniewski(ur.2000)"`. Zastosuj na nim kolejno dwie operacje `re.sub()`: pierwszą do usunięcia fragmentu z rokiem urodzenia (zwróć uwagę na brak spacji przed nawiasem), drugą do normalizacji spacji. Na końcu wywołaj `.strip().title()`.
+
+17. Napisz wzorzec w r-stringu, który dopasuje adresy e-mail w uproszczonej postaci: ciąg znaków alfanumerycznych, znak `@`, ciąg znaków alfanumerycznych, kropka i domena. Wykorzystaj `\w+`, literalną kropkę `\.` oraz `re.findall()`.
+
+18. Zdefiniuj listę zabronionych słów `banned = ["error", "fail", "crash"]`. Za pomocą rf-stringa i metody `join()` utwórz wzorzec z alternacją i granicami słowa `\b`, a następnie użyj `re.findall()` do wyszukania tych słów w przykładowym logu.
+
+19. Dany jest wieloliniowy string z danymi w formacie `"klucz: wartość"`. Napisz wzorzec z `re.findall()` wykorzystujący grupę `()` i `\s+`, który wyodrębni same wartości (po dwukropku i spacji). Użyj r-stringa.
+
+20. Napisz funkcję `clean_records(records)`, która przyjmuje listę stringów w formacie `"IMIĘ NAZWISKO (ur. RRRR)"`. Funkcja ma za pomocą `re.sub()` z r-stringiem usunąć rok urodzenia w nawiasie, znormalizować spacje (`\s+`), przyciąć string (`.strip()`) i zastosować `.title()`. Zwróć listę oczyszczonych rekordów. Wykorzystaj rf-string, aby wzorzec obsługiwał opcjonalną spację i opcjonalną kropkę po `ur`.

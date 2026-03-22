@@ -1,0 +1,41 @@
+# f-stringi
+
+1. Zdefiniuj zmienną `name = "Anna"` i zmienną `age = 28`, a następnie wypisz je w jednym zdaniu za pomocą f-stringa w postaci `f"Imię: {name}, wiek: {age}"`.
+
+2. Mając zmienną `age = 28`, napisz f-string, który wewnątrz klamer obliczy wartość wyrażenia `age + 5` i wypisze wynik w zdaniu `"Za 5 lat będziesz mieć: ..."`.
+
+3. Zdefiniuj zmienną `name = "Anna"` i napisz f-string, który wewnątrz klamer wywoła metodę `name.upper()`, wypisując imię wielkimi literami.
+
+4. Mając zmienną `pi = 3.141592653589793`, napisz f-string ze specyfikatorem `:.4f`, który wyświetli wartość pi zaokrągloną do czterech miejsc po przecinku.
+
+5. Zdefiniuj zmienną `loss = 0.00034521` i użyj f-stringa ze specyfikatorem `:.2e`, aby wypisać tę wartość w notacji naukowej z dwoma miejscami po przecinku.
+
+6. Mając zmienną `accuracy = 0.9534`, napisz f-string ze specyfikatorem `:.1%`, który wyświetli dokładność jako wartość procentową z jednym miejscem po przecinku.
+
+7. Zdefiniuj zmienną `population = 38179800` i napisz f-string z separatorem tysięcy `:,`, wypisując wartość w czytelnym formacie z przecinkami.
+
+8. Mając zmienną `revenue = 1543267.89`, napisz f-string, który połączy separator tysięcy z precyzją dwóch miejsc po przecinku, stosując specyfikator `:,.2f`, i doda na końcu walutę `PLN`.
+
+9. Zdefiniuj zmienną `population = 38179800` i użyj f-stringa ze specyfikatorem `:_`, aby wypisać wartość z podkreślnikami jako separatorami tysięcy.
+
+10. Mając listę krotek `metrics = [("Accuracy", 0.9534), ("Precision", 0.9211), ("Recall", 0.8876)]`, napisz pętlę `for`, która za pomocą f-stringa z wyrównaniem do lewej `:<12` wypisze nazwy metryk w kolumnie o szerokości 12 znaków, a obok ich wartości w formacie `:.2%`.
+
+11. Wykorzystując tę samą listę `metrics`, napisz pętlę `for` z f-stringiem, w którym zastosujesz wyrównanie do prawej `:>15` z gwiazdką `*` jako znakiem wypełnienia, a po dwukropku wartość w formacie `:.4f`.
+
+12. Mając zmienną `x = 42`, napisz f-string ze specyfikatorem `:^10`, który wycentruje liczbę w polu o szerokości 10 znaków. Opisz, jaką rolę pełni tu operator `^`.
+
+13. Zaimportuj `datetime` i zdefiniuj `now = datetime.now()`. Napisz f-string z formatem `:%Y-%m-%d`, który wypisze bieżącą datę w standardzie ISO.
+
+14. Mając tę samą zmienną `now`, napisz dwa f-stringi: jeden z formatem `:%H:%M:%S` wypisujący godzinę, drugi z formatem `:%d %B %Y` wypisujący datę w formacie europejskim ze słowną nazwą miesiąca.
+
+15. Zdefiniuj zmienne `learning_rate = 0.001`, `epochs = 50` i `batch_size = 32`. Użyj operatora debugowania `=` w f-stringu (np. `f"{learning_rate = }"`) do wypisania nazwy i wartości każdej zmiennej.
+
+16. Mając zmienną `loss = 0.0023456`, napisz f-string łączący operator `=` z formatowaniem, w postaci `f"{loss = :.4f}"`, i opisz, co zostanie wypisane.
+
+17. Mając zmienną `train_acc = 0.9812`, napisz f-string, który za pomocą operatora `=` i specyfikatora `:.1%` wypisze jednocześnie nazwę zmiennej i jej wartość procentową.
+
+18. Zdefiniuj listę `values = [10, 20, 30, 40]` i napisz f-string, w którym wewnątrz klamer wywołasz wyrażenie `sum(values) / len(values)`, wypisując średnią arytmetyczną.
+
+19. Mając zmienne `model_name = "RandomForestClassifier"`, `accuracy = 0.9534`, `precision = 0.9211`, `recall = 0.8876` i `n_samples = 150000`, napisz wieloliniowy f-string (w potrójnych cudzysłowach), który sformatuje raport z wynikami modelu. Użyj linii z `{'='*50}` jako separatorów, wyrównania do prawej `:>8.2%` dla metryk i separatora tysięcy `:,` dla liczby próbek.
+
+20. Mając zmienne z poprzedniego zadania, oblicz dodatkowo `f1 = 2 * precision * recall / (precision + recall)` i rozbuduj wieloliniowy f-string o wiersz z F1-score. Zadbaj o to, aby wszystkie metryki miały jednolite wyrównanie do prawej w kolumnie o szerokości 8 znaków ze specyfikatorem `:.2%`, a cały raport był otoczony dekoracyjnymi liniami wygenerowanymi wyrażeniem w klamrach.
