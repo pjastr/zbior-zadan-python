@@ -1,0 +1,41 @@
+# Operatory bitowe
+
+1. Napisz funkcję `is_even`, która przyjmuje liczbę całkowitą i zwraca wartość logiczną. Funkcja używając operatora `&` ma sprawdzić, czy liczba jest parzysta. Funkcja ma działać poprawnie również dla liczb ujemnych.
+
+2. Napisz funkcję `last_bit`, która przyjmuje liczbę całkowitą i zwraca wartość najmłodszego bitu (0 lub 1) tej liczby.
+
+3. Napisz funkcję `multiply_by_power_of_two`, która przyjmuje dwie liczby całkowite `x` i `n`, a zwraca wynik mnożenia `x` przez `2^n` z wykorzystaniem przesunięcia bitowego. Następnie napisz analogiczną funkcję `divide_by_power_of_two` realizującą dzielenie całkowite.
+
+4. Napisz funkcję `mod_power_of_two`, która przyjmuje dwie liczby całkowite `x` i `n`, a zwraca resztę z dzielenia `x` przez `2^n`, używając wyłącznie operatorów bitowych (bez `%`).
+
+5. Napisz funkcję `get_bit`, która przyjmuje liczbę całkowitą `x` oraz pozycję `i` (liczba całkowita), a zwraca wartość bitu na pozycji `i` w liczbie `x` (licząc od pozycji 0 jako najmłodszej).
+
+6. Napisz trzy funkcje: `set_bit`, `clear_bit` oraz `toggle_bit`. Każda z nich przyjmuje liczbę całkowitą `x` oraz pozycję `i` (liczba całkowita) i zwraca liczbę całkowitą — kolejno z ustawionym, wyzerowanym i przełączonym bitem na pozycji `i`.
+
+7. Napisz funkcję `to_u2`, która przyjmuje liczbę całkowitą `x` oraz liczbę bitów `bits` (liczba całkowita), a zwraca reprezentację U2 liczby `x` na zadanej szerokości jako napis złożony z zer i jedynek.
+
+8. Napisz funkcję `count_ones`, która przyjmuje nieujemną liczbę całkowitą i zwraca liczbę całkowitą równą liczbie bitów ustawionych na 1. Wykorzystaj funkcję `bin` i metodę `count`.
+
+9. Napisz funkcję `hamming_distance`, która przyjmuje dwie liczby całkowite i zwraca liczbę całkowitą równą odległości Hamminga między nimi (liczba pozycji, na których różnią się ich bity).
+
+10. Napisz funkcję `is_power_of_two`, która przyjmuje liczbę całkowitą i zwraca wartość logiczną informującą, czy ta liczba jest dodatnią potęgą dwójki. Użyj wzorca `x & (x - 1)`.
+
+11. Napisz funkcję `lowest_set_bit`, która przyjmuje liczbę całkowitą `x` i zwraca liczbę całkowitą będącą wartością najmłodszego ustawionego bitu (np. dla wejścia `44` zwróci `4`). Użyj wyrażenia z `-x`.
+
+12. Napisz funkcję `find_unique`, która przyjmuje listę liczb całkowitych i zwraca liczbę całkowitą — jedyną wartość pojawiającą się nieparzystą liczbę razy, gdy wszystkie pozostałe występują parami. Wykorzystaj XOR oraz pętlę `for`.
+
+13. Napisz funkcję `xor_swap`, która przyjmuje dwie liczby całkowite `a` i `b`, a zwraca krotkę dwóch liczb całkowitych z zamienionymi wartościami. Nie używaj zmiennej pomocniczej — korzystaj wyłącznie z operatora `^`.
+
+14. Napisz funkcję `reverse_bits`, która przyjmuje liczbę całkowitą `x` oraz liczbę bitów `bits` (liczba całkowita), a zwraca liczbę całkowitą powstałą przez odwrócenie kolejności bitów w `bits`-bitowej reprezentacji liczby `x` (np. dla `x = 0b1011` i `bits = 4` wynikiem jest `0b1101`).
+
+15. Napisz funkcję `extract_byte`, która przyjmuje liczbę całkowitą `x` oraz numer bajtu `n` (liczba całkowita), a zwraca liczbę całkowitą będącą wartością `n`-tego bajtu liczby `x` (bajt zerowy to najmłodsze 8 bitów). Wykorzystaj kombinację `>>` i maski `& 0xFF`.
+
+16. Zdefiniuj zestaw flag uprawnień korzystając z `IntFlag` i `auto`: `READ`, `WRITE`, `EXECUTE`, `ADMIN`. Napisz trzy funkcje: `grant` przyjmującą bieżące uprawnienia oraz nową flagę i zwracającą nowe uprawnienia, `revoke` przyjmującą bieżące uprawnienia oraz flagę do usunięcia i zwracającą nowe uprawnienia, `has_all` przyjmującą bieżące uprawnienia oraz wymagane flagi i zwracającą wartość logiczną informującą, czy bieżące uprawnienia zawierają wszystkie wymagane flagi.
+
+17. Napisz klasę `Bitmask` z polami `value` (liczba całkowita) i `width` (liczba całkowita) oraz metodami: `set` (przyjmuje pozycję bitu, nic nie zwraca), `clear` (przyjmuje pozycję bitu, nic nie zwraca), `flip` (przyjmuje pozycję bitu, nic nie zwraca), `is_set` (przyjmuje pozycję bitu, zwraca wartość logiczną) oraz `__repr__` zwracającą reprezentację binarną o szerokości `width` uzupełnioną wiodącymi zerami.
+
+18. Rozszerz klasę `BitSet` z wykładu o metodę `difference`, która przyjmuje inny obiekt `BitSet` i zwraca nowy `BitSet` zawierający elementy obecne w `self`, ale nieobecne w `other`. Dodaj również metodę `is_subset`, która przyjmuje inny obiekt `BitSet` i zwraca wartość logiczną informującą, czy `self` jest podzbiorem `other`.
+
+19. Napisz klasę `BloomFilter` z metodami: `__init__` przyjmującą rozmiar (liczba całkowita) i nic niezwracającą, `add` przyjmującą wartość (liczba całkowita) i nic niezwracającą oraz `__contains__` przyjmującą wartość (liczba całkowita) i zwracającą wartość logiczną. Filtr ma przechowywać dane w jednym polu `bits` (liczba całkowita) i używać trzech prostych funkcji haszujących postaci `(value * k) & (size - 1)` dla `k = 1, 3, 7`. Metoda `add` ustawia odpowiednie bity, a operator `in` sprawdza, czy wszystkie te bity są ustawione. Zakładamy, że rozmiar jest potęgą dwójki.
+
+20. Napisz klasę `Xorshift32` implementującą generator liczb pseudolosowych z rodziny xorshift. W metodzie `__init__` (przyjmuje ziarno będące liczbą całkowitą, nic nie zwraca) zapisz ziarno w polu `state` (liczba całkowita). Metoda `next` (nie przyjmuje argumentów, zwraca liczbę całkowitą) ma wykonać kolejno: `state ^= (state << 13) & 0xFFFFFFFF`, `state ^= (state >> 17)`, `state ^= (state << 5) & 0xFFFFFFFF`, a następnie zwrócić nową wartość pola `state` zamaskowaną do 32 bitów. Dodaj metodę `random_below`, która przyjmuje liczbę całkowitą `n` i zwraca liczbę całkowitą z zakresu `[0, n)` przy założeniu, że `n` jest potęgą dwójki.

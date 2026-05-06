@@ -31,6 +31,8 @@ book:
       chapters:
         - dekoratory.qmd
         - re.qmd
+        - iteratory_generatory.qmd
+        - operatory_bitowe.qmd
   downloads: [pdf, epub]
   repo-url: https://github.com/pjastr/zbior-zadan-python
   repo-actions: [issue]

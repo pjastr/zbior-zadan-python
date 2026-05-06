@@ -1,0 +1,41 @@
+# Iteratory i generatory
+
+1. Napisz klasę `CountdownIterator`, która przyjmuje liczbę całkowitą `start` i przy iteracji zwraca kolejne liczby od `start` do 0 włącznie. Wykorzystaj protokół iteratora (`__iter__`, `__next__`).
+
+2. Stwórz wyrażenie generatorowe `cubes`, które dla `range(20)` produkuje sześciany kolejnych liczb. Następnie użyj `sum()` do obliczenia ich sumy.
+
+3. Zaimplementuj klasę `RangeIterator` z parametrami `start`, `stop` i `step`, działającą analogicznie do wbudowanego `range`, ale w pełni wykorzystującą protokół iteratora.
+
+4. Napisz funkcję generatorową `even_numbers(limit)`, która zwraca kolejne liczby parzyste mniejsze od `limit`. Użyj jej w pętli `for` do wypisania wartości.
+
+5. Korzystając z listy składanej, przekształć listę `raw_data = ["12", "abc", "7.5", "", "3", "xyz"]` w listę liczb całkowitych zawierającą tylko poprawne wartości całkowite.
+
+6. Napisz klasę `FibonacciIterator`, która przy każdym wywołaniu `__next__()` zwraca kolejną liczbę z ciągu Fibonacciego. Iterator ma się zatrzymać po wygenerowaniu `n` elementów (`StopIteration`).
+
+7. Stwórz funkcję generatorową `chunked(data, chunk_size)`, która działa podobnie do klasy `DataBatchIterator` z wykładu, ale używa instrukcji `yield` zamiast klasy.
+
+8. Napisz słownik składany `word_lengths`, który dla listy `words = ["python", "data", "iterator", "yield", "set"]` zwróci mapowanie słowo → jego długość, ale tylko dla słów dłuższych niż 3 znaki.
+
+9. Zaimplementuj generator `running_average(numbers)`, który dla listy liczb zwraca kolejne wartości średniej kroczącej (po pierwszym, drugim, trzecim... elemencie).
+
+10. Napisz klasę `ReverseIterator`, która przyjmuje sekwencję i przy iteracji zwraca jej elementy w odwróconej kolejności. Nie korzystaj z funkcji `reversed()`.
+
+11. Stwórz potok generatorów dla listy stringów `lines = ["10", "abc", "20", "", "30"]`: pierwszy generator filtruje wartości będące liczbami, drugi konwertuje je na `int`, trzeci podnosi do kwadratu. Oblicz sumę końcową używając `sum()`.
+
+12. Napisz funkcję generatorową `cycle_n_times(iterable, n)`, która `n` razy iteruje po podanym iterowalnym obiekcie, zwracając kolejne elementy.
+
+13. Korzystając z wyrażenia generatorowego oraz funkcji `any()`, sprawdź czy w liście `numbers = [3, 7, 11, 14, 19, 25]` znajduje się jakaś liczba podzielna przez 5. Następnie z użyciem `all()` sprawdź, czy wszystkie są mniejsze niż 30.
+
+14. Zaimplementuj klasę `BatchIterator` z type hinting (wykorzystaj `Iterator`, `List`, `Any` z modułu `typing`), która zwraca dane w partiach o podanym rozmiarze, ale dodatkowo pomija partie zawierające mniej niż `min_size` elementów.
+
+15. Stwórz zbiór składany `unique_first_letters` zawierający pierwsze litery (małe) słów z listy `words = ["Apple", "banana", "apricot", "Cherry", "blueberry"]`, ale wyłącznie dla słów o długości co najmniej 5 znaków.
+
+16. Napisz funkcję generatorową `read_lines_filtered(filepath, keyword)`, która czyta plik linia po linii i zwraca tylko te linie, które zawierają podane słowo kluczowe (po `strip()`). Wykorzystaj instrukcję `with open(...)`.
+
+17. Zaimplementuj klasę `ZipIterator`, która przyjmuje dwie sekwencje i przy iteracji zwraca krotki par odpowiadających sobie elementów. Iteracja kończy się, gdy krótsza z sekwencji się wyczerpie. Nie korzystaj z wbudowanego `zip()`.
+
+18. Napisz potok generatorów do przetwarzania pliku CSV (analogicznie do przykładu z wykładu): `load_records` wczytuje wiersze, `filter_valid` odrzuca rekordy z brakującą wartością w kolumnie 1, `extract_feature` zwraca wartości numeryczne z wybranej kolumny. Następnie napisz funkcję `compute_stats(pipeline)`, która zwraca słownik z kluczami `min`, `max`, `mean`. Użyj type hinting (`Generator`, `List`, `Dict`).
+
+19. Korzystając z listy składanej zagnieżdżonej, wygeneruj macierz mnożenia o wymiarach 5×5 jako listę list. Następnie z użyciem wyrażenia generatorowego oblicz sumę wszystkich elementów na przekątnej.
+
+20. Zaimplementuj klasę `MovingWindowIterator` z type hinting, która przyjmuje sekwencję `data: List[Any]` oraz `window_size: int`. Przy iteracji zwraca kolejne podlisty (okna) o podanym rozmiarze, przesuwane o jeden element. Po wyczerpaniu możliwych okien zgłasza `StopIteration`. Dodatkowo napisz wyrażenie generatorowe wykorzystujące tę klasę do obliczenia średniej w każdym oknie dla listy liczb.
