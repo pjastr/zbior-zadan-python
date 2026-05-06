@@ -1,0 +1,41 @@
+# Wybrane typy sekwencyjne
+
+1. Napisz funkcję `to_bytes_literal`, która przyjmuje napis ASCII i zwraca odpowiadający mu obiekt `bytes` zapisany jako literał z prefiksem `b`. Następnie wypisz typ wyniku oraz jego długość.
+
+2. Napisz funkcję `count_byte`, która przyjmuje obiekt `bytes` oraz pojedynczy bajt (liczba całkowita z zakresu 0–255) i zwraca liczbę całkowitą równą liczbie wystąpień tego bajtu w sekwencji.
+
+3. Napisz funkcję `pack_three_doubles`, która przyjmuje trzy liczby zmiennoprzecinkowe i zwraca obiekt `bytes` powstały przez ich serializację za pomocą `struct.pack` z formatem `"3d"`. Sprawdź długość wyniku i upewnij się, że wynosi 24.
+
+4. Napisz funkcję `unpack_three_doubles`, która przyjmuje obiekt `bytes` o długości 24 i zwraca krotkę trzech liczb zmiennoprzecinkowych odzyskanych za pomocą `struct.unpack`.
+
+5. Napisz funkcję `pack_vector`, która przyjmuje listę liczb zmiennoprzecinkowych o dowolnej długości i zwraca obiekt `bytes` z ich serializacją w formacie `f"{len(values)}d"`. Następnie napisz funkcję `unpack_vector` przyjmującą obiekt `bytes` i liczbę elementów (liczba całkowita), zwracającą krotkę liczb zmiennoprzecinkowych.
+
+6. Napisz funkcję `to_mutable`, która przyjmuje obiekt `bytes` i zwraca odpowiadający mu obiekt `bytearray`. Napisz też funkcję `to_immutable`, która wykonuje konwersję w drugą stronę.
+
+7. Napisz funkcję `replace_first_byte`, która przyjmuje obiekt `bytearray` oraz nową wartość bajtu (liczba całkowita z zakresu 0–255), zmienia pierwszy bajt na podaną wartość i nic nie zwraca. Funkcja ma modyfikować bufor w miejscu.
+
+8. Napisz funkcję `overwrite_double`, która przyjmuje obiekt `bytearray` zawierający serializowany wektor liczb zmiennoprzecinkowych, indeks elementu (liczba całkowita) oraz nową wartość (liczba zmiennoprzecinkowa) i nadpisuje wskazany element przy użyciu `struct.pack_into` z formatem `"d"`. Funkcja nic nie zwraca.
+
+9. Napisz funkcję `build_int_array`, która przyjmuje listę liczb całkowitych i zwraca obiekt `array.array` z kodem typu `'i'` (int32) zawierający te wartości.
+
+10. Napisz funkcję `array_memory_usage`, która przyjmuje obiekt `array.array` i zwraca liczbę całkowitą będącą szacunkowym rozmiarem zajmowanej pamięci w bajtach. Wykorzystaj `buffer_info` oraz pole `itemsize`.
+
+11. Napisz funkcję `compare_memory`, która przyjmuje liczbę całkowitą `n`, tworzy zwykłą listę `list(range(n))` oraz tablicę `array.array` z kodem typu `'i'` zawierającą te same elementy, a następnie wypisuje rozmiar pamięci obu struktur. Do listy użyj `sys.getsizeof`, do tablicy iloczynu długości i `itemsize`.
+
+12. Napisz funkcję `save_floats`, która przyjmuje obiekt `array.array` z kodem typu `'d'` oraz ścieżkę do pliku (napis), a następnie zapisuje zawartość tablicy do pliku binarnego za pomocą `tofile`. Funkcja nic nie zwraca.
+
+13. Napisz funkcję `load_floats`, która przyjmuje ścieżkę do pliku (napis) oraz liczbę elementów do odczytu (liczba całkowita) i zwraca obiekt `array.array` z kodem typu `'d'` wczytany z pliku binarnego za pomocą `fromfile`.
+
+14. Napisz funkcję `roundtrip_array`, która przyjmuje listę liczb zmiennoprzecinkowych oraz ścieżkę do pliku (napis). Funkcja ma utworzyć tablicę `array.array` z kodem typu `'d'`, zapisać ją do pliku, odczytać z pliku i zwrócić odczytaną tablicę.
+
+15. Napisz funkcję `array_from_generator`, która przyjmuje liczbę całkowitą `n` i zwraca obiekt `array.array` z kodem typu `'d'` zawierający `n` wartości postaci `x * 0.1` dla `x` z zakresu od 0 do `n-1`. Wykorzystaj wyrażenie generujące przekazane do konstruktora `array.array`.
+
+16. Napisz funkcję `read_pgm_header`, która przyjmuje ścieżkę do pliku PGM (napis) i zwraca krotkę zawierającą szerokość, wysokość oraz maksymalną wartość piksela (trzy liczby całkowite). Funkcja ma otwierać plik w trybie `"rb"`, czytać linię z magicznym numerem `b"P5"`, pomijać linie komentarzy zaczynające się od `b"#"` i nie odczytywać samych pikseli.
+
+17. Napisz funkcję `read_pgm_pixels`, która przyjmuje ścieżkę do pliku PGM (napis) i zwraca krotkę: szerokość (liczba całkowita), wysokość (liczba całkowita), maksymalna wartość (liczba całkowita) oraz obiekt `bytearray` z surowymi pikselami. Funkcja ma sprawdzać poprawność magicznego numeru `b"P5"` przy użyciu instrukcji `assert`.
+
+18. Napisz funkcję `pixels_to_matrix`, która przyjmuje obiekt `bytearray` z pikselami obrazu, szerokość (liczba całkowita) i wysokość (liczba całkowita), a zwraca listę list liczb całkowitych reprezentującą obraz wiersz po wierszu. Wykorzystaj wycinanie sekwencji oraz konstruktor `list`.
+
+19. Napisz funkcję `invert_pgm`, która przyjmuje obiekt `bytearray` z pikselami obrazu PGM oraz maksymalną wartość piksela (liczba całkowita), modyfikuje bufor w miejscu tak, aby każdy piksel został zastąpiony wartością `max_val - piksel` (negatyw obrazu), i nic nie zwraca. Wykorzystaj pętlę `for` po indeksach.
+
+20. Napisz funkcję `pgm_pipeline`, która przyjmuje ścieżkę do pliku wejściowego PGM (napis) oraz ścieżkę do pliku wyjściowego (napis). Funkcja ma odczytać nagłówek i piksele obrazu (analogicznie do `read_pgm_pixels`), zapisać piksele do tablicy `array.array` z kodem typu `'b'` lub `'B'`, zapisać tę tablicę do pliku binarnego za pomocą `tofile`, a następnie odczytać ją z powrotem za pomocą `fromfile` i zwrócić odczytaną tablicę.
