@@ -1,0 +1,41 @@
+# Moduł `functools`
+
+1. Wykorzystując `functools.reduce`, oblicz sumę elementów listy liczb całkowitych `values`. Wartość początkową akumulatora ustaw na 0.
+
+2. Korzystając z `functools.reduce` oraz modułu `operator`, oblicz iloczyn elementów listy `numbers` zawierającej liczby zmiennoprzecinkowe. Nie używaj wyrażenia lambda.
+
+3. Napisz funkcję `clip_value`, która przyjmuje wartość, dolny i górny limit oraz zwraca tę wartość przyciętą do podanego przedziału. Następnie przy pomocy `functools.partial` utwórz funkcję `clip_percent`, która ma limity ustawione na 0 i 100.
+
+4. Zdefiniuj funkcję `format_number(value, precision, suffix)` zwracającą sformatowany ciąg znaków. Przy użyciu `functools.partial` skonfiguruj wariant `format_percent` z precyzją 2 i sufiksem `"%"` oraz wariant `format_currency` z precyzją 2 i sufiksem `" PLN"`.
+
+5. Wykorzystując dekorator `functools.lru_cache` zaimplementuj rekurencyjnie funkcję `fibonacci(n)` zwracającą n-ty wyraz ciągu Fibonacciego. Wywołaj funkcję dla wartości 100 i wypisz wynik.
+
+6. Zaimplementuj rekurencyjną funkcję `binomial(n, k)` obliczającą współczynnik dwumianowy. Użyj dekoratora `functools.cache`, a następnie po kilku wywołaniach wypisz statystyki z `cache_info`.
+
+7. Korzystając z dekoratora `functools.lru_cache(maxsize=32)`, zaimplementuj funkcję `expensive_lookup(key)`, która symuluje kosztowne pobranie danych przez wywołanie `time.sleep(1)` i zwrócenie słownika. Zmierz czas drugiego wywołania z tym samym argumentem i porównaj z pierwszym.
+
+8. Wyjaśnij w komentarzu, dlaczego funkcja z dekoratorem `lru_cache` nie zadziała, jeśli przekażemy do niej argument typu `list`. Następnie napisz funkcję `sum_unique(items)`, która przyjmuje krotkę i zwraca sumę unikalnych wartości, oraz pokaż użycie cache z różnymi krotkami jako wejściem.
+
+9. Zdefiniuj klasę `Statistics` z konstruktorem przyjmującym sekwencję liczb. Użyj `functools.cached_property` do zdefiniowania atrybutów `mean`, `variance` i `stdev`. Wewnątrz każdej metody dodaj `print` informujący o uruchomieniu obliczeń, aby zweryfikować, że są wykonywane tylko raz.
+
+10. Zaimplementuj klasę `TextAnalyzer` z konstruktorem przyjmującym ciąg znaków. Wykorzystując `functools.cached_property`, dodaj atrybuty `word_count`, `unique_words` (zwracający `set`) oraz `most_common` (zwracający najczęściej występujące słowo).
+
+11. Korzystając z `functools.singledispatch`, zdefiniuj funkcję `describe(value)`, która dla argumentu typu `int` zwraca napis `"integer: ..."`, dla `float` napis `"float: ..."`, a dla `str` napis `"string of length ..."`. Dodaj implementację domyślną zgłaszającą `TypeError`.
+
+12. Wykorzystując `functools.singledispatch`, napisz funkcję `serialize(data)`, która dla listy zwraca jej reprezentację jako ciąg znaków z elementami oddzielonymi przecinkami, dla słownika - parami `klucz=wartość` oddzielonymi średnikami, a dla krotki - elementami w nawiasach okrągłych.
+
+13. Napisz dekorator `log_calls`, który wypisuje nazwę dekorowanej funkcji oraz przekazane argumenty przed każdym wywołaniem. Wykorzystaj `functools.wraps`, aby zachować metadane oryginalnej funkcji. Sprawdź, że `__name__` i `__doc__` udekorowanej funkcji są zachowane.
+
+14. Zaimplementuj dekorator `retry(times)`, który ponawia wywołanie funkcji do `times` razy w przypadku zgłoszenia wyjątku. Wykorzystaj `functools.wraps`. Przetestuj dekorator na funkcji, która losowo zgłasza wyjątek lub zwraca wynik.
+
+15. Korzystając z dekoratora `functools.total_ordering`, zaimplementuj klasę `Temperature` przechowującą wartość w stopniach Celsjusza. Zdefiniuj tylko metody `__eq__` i `__lt__`, a następnie sprawdź działanie wszystkich operatorów porównania oraz funkcji `sorted` na liście instancji.
+
+16. Wykorzystując `functools.total_ordering`, zaimplementuj klasę `Version`, której instancje porównywane są na podstawie krotki `(major, minor, patch)`. Pokaż użycie operatorów `<`, `>=`, `==` oraz sortowania listy obiektów.
+
+17. Wykorzystując `functools.reduce` oraz funkcję `operator.and_` z modułu `operator`, oblicz część wspólną listy zbiorów `sets_list`. Następnie zrób to samo dla sumy zbiorów, używając `operator.or_`.
+
+18. Mając listę słowników `records`, w której każdy element zawiera klucze `category` i `amount`, wykorzystaj `functools.reduce`, aby zbudować słownik agregujący sumy kwot per kategoria. Akumulatorem ma być pusty słownik.
+
+19. Napisz dekorator `memoize_with_stats`, który łączy memoizację z licznikiem trafień i nietrafień (bez użycia `lru_cache`). Wykorzystaj `functools.wraps`. Dekorator ma dodawać do funkcji metody `cache_hits` i `cache_misses` zwracające aktualne liczniki.
+
+20. Korzystając z `functools.partial`, `functools.reduce` oraz `functools.singledispatch`, zaprojektuj funkcję `pipeline(value, *steps)` aplikującą sekwencję transformacji do wartości wejściowej. Następnie zdefiniuj `singledispatch`-ową funkcję `apply_default` dającą różne kroki transformacji dla typów `int`, `str` i `list`, a `partial` wykorzystaj do skonfigurowania powtarzalnych wariantów kroków pipeline'u.

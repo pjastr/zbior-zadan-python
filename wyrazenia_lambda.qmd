@@ -1,0 +1,41 @@
+# Wyrażenia lambda
+
+1. Napisz wyrażenie lambda o nazwie `cube`, które przyjmuje liczbę całkowitą i zwraca jej sześcian. Wywołaj je dla wartości 4 i wypisz wynik.
+
+2. Zdefiniuj wyrażenie lambda `area_rectangle` przyjmujące dwa argumenty (długość i szerokość) i zwracające pole prostokąta. Sprawdź jego działanie dla kilku par wartości.
+
+3. Przy pomocy funkcji `map` oraz wyrażenia lambda przekształć listę liczb całkowitych `numbers` na listę ich wartości bezwzględnych. Wynik wypisz jako listę.
+
+4. Wykorzystując `filter` oraz wyrażenie lambda, wybierz z listy `words` tylko te ciągi znaków, które mają długość większą niż 5. Wynikiem ma być nowa lista.
+
+5. Posortuj listę krotek `points` postaci `(x, y)` rosnąco według drugiej współrzędnej, korzystając z funkcji `sorted` i parametru `key` w postaci wyrażenia lambda.
+
+6. Mając listę słowników `students`, w której każdy element zawiera klucze `name` oraz `grade`, posortuj ją malejąco po wartości `grade` przy pomocy `sorted` i lambdy.
+
+7. Wykorzystując `functools.reduce` oraz wyrażenie lambda, oblicz sumę kwadratów elementów listy `values` zawierającej liczby zmiennoprzecinkowe.
+
+8. Za pomocą `reduce` i lambdy znajdź największy element w liście liczb całkowitych `numbers`, nie używając wbudowanej funkcji `max`.
+
+9. Zdefiniuj wyrażenie lambda `classify_temperature`, które dla podanej temperatury (typu zmiennoprzecinkowego) zwraca jeden z napisów: `"cold"`, `"warm"` lub `"hot"`, w zależności od przedziału (poniżej 10, między 10 a 25, powyżej 25). Wykorzystaj wyrażenie warunkowe.
+
+10. Dla listy ciągów znaków `names` użyj kombinacji `map` i lambdy, aby zamienić każde imię na format, w którym pierwsza litera jest wielka, a pozostałe małe. Następnie z tak przekształconej listy odfiltruj imiona zaczynające się na literę `A`.
+
+11. Mając dwie listy o jednakowej długości — `prices` i `quantities` — wykorzystaj `zip`, `map` i lambdę, aby obliczyć listę wartości iloczynów odpowiadających sobie elementów.
+
+12. Korzystając z `enumerate` oraz wyrażenia lambda przekazanego do `map`, utwórz listę ciągów znaków postaci `"i: value"` dla każdej pozycji listy `items`.
+
+13. Napisz wyrażenie generatorowe `even_squares`, które dla kolejnych liczb z zakresu od 1 do 100 zwraca kwadraty liczb parzystych. Następnie wypisz pierwsze pięć wartości za pomocą `next`.
+
+14. Korzystając z funkcji `iter` oraz `next`, pobierz ręcznie trzy pierwsze elementy z listy `letters` zawierającej znaki alfabetu. Wytłumacz w komentarzu różnicę między obiektem iterowalnym a iteratorem.
+
+15. Zdefiniuj funkcję `make_multiplier`, która przyjmuje liczbę `factor` i zwraca wyrażenie lambda mnożące swój argument przez tę liczbę. Pokaż działanie tworząc funkcje `double` oraz `triple`.
+
+16. Mając listę słów `text_tokens`, użyj `sorted` wraz z lambdą, aby uporządkować je najpierw rosnąco po długości słowa, a następnie alfabetycznie (wykorzystaj krotkę jako wartość zwracaną przez klucz).
+
+17. Korzystając wyłącznie z `map`, `filter` i lambd, napisz wyrażenie obliczające sumę sześcianów liczb nieparzystych z zakresu od 1 do 50. Do końcowego sumowania wykorzystaj funkcję `sum`.
+
+18. Zaimplementuj funkcję generatorową `running_average`, która dla podanego obiektu iterowalnego z liczbami zwraca kolejne średnie kroczące. Następnie, używając `map` i lambdy, zaokrąglij wyniki do dwóch miejsc po przecinku.
+
+19. Mając listę słowników `transactions` z kluczami `category` oraz `amount`, oblicz przy pomocy `reduce` i lambdy słownik agregujący sumy kwot w obrębie każdej kategorii. Akumulatorem ma być pusty słownik.
+
+20. Napisz funkcję `compose`, która przyjmuje dowolną liczbę funkcji jednoargumentowych (przekazywanych jako wyrażenia lambda) i zwraca ich złożenie jako pojedyncze wyrażenie lambda. Zademonstruj działanie składając trzy operacje: dodanie 1, podniesienie do kwadratu i pomnożenie przez 2.
