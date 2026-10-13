@@ -673,12 +673,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Za pomocą generator expression i <code>tuple()</code> utwórz krotkę <code>high_humidity</code> zawierającą krotki <code>(id, humidity)</code> tylko dla czujników, których wilgotność przekracza 50.</p>
 <ol start="19" type="1">
 <li><p>Zaimportuj moduł <code>sys</code>. Utwórz listę <code>data_list</code> i krotkę <code>data_tuple</code> zawierające te same 1000 liczb całkowitych (od 0 do 999). Porównaj rozmiar obu struktur za pomocą <code>sys.getsizeof()</code>. Wypisz wyniki i wyjaśnij komentarzem, dlaczego krotka zajmuje mniej pamięci.</p></li>
-<li><p>Napisz trzy funkcje operujące wyłącznie na krotkach (bez konwersji na listę):</p></li>
-<li><p><code>tuple_replace(data, index, value)</code> — zwraca nową krotkę, w której element o podanym indeksie został zastąpiony wartością <code>value</code> (wykorzystaj slicing i konkatenację krotek).</p></li>
-<li><p><code>tuple_insert(data, index, value)</code> — zwraca nową krotkę z wstawionym elementem na podanej pozycji.</p></li>
-<li><p><code>tuple_remove(data, index)</code> — zwraca nową krotkę bez elementu o podanym indeksie.</p></li>
+<li><p>Napisz trzy funkcje operujące wyłącznie na krotkach (bez konwersji na listę):</p>
+<ul>
+<li><code>tuple_replace(data, index, value)</code> — zwraca nową krotkę, w której element o podanym indeksie został zastąpiony wartością <code>value</code> (wykorzystaj slicing i konkatenację krotek).</li>
+<li><code>tuple_insert(data, index, value)</code> — zwraca nową krotkę z wstawionym elementem na podanej pozycji.</li>
+<li><code>tuple_remove(data, index)</code> — zwraca nową krotkę bez elementu o podanym indeksie.</li>
+</ul>
+<p>Przetestuj każdą funkcję na krotce <code>sample = (10, 20, 30, 40, 50)</code> i wypisz wyniki.</p></li>
 </ol>
-<p>Przetestuj każdą funkcję na krotce <code>sample = (10, 20, 30, 40, 50)</code> i wypisz wyniki.</p>
 
 
 

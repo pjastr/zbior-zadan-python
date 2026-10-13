@@ -65,8 +65,9 @@ Wykonaj kopię płytką (`shallow_copy`) i kopię głęboką (`deep_copy`). Zmod
 nested = [[1, 2, 3], [4, 5], [6, 7, 8, 9], [10]]
 ```
 Napisz dwa rozwiązania, które spłaszczą ją do jednej listy `flat_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`:
-1. za pomocą zagnieżdżonego list comprehension,
-2. za pomocą pętli `for`.
+
+- za pomocą zagnieżdżonego list comprehension,
+- za pomocą pętli `for`.
 
 14. Dana jest lista liczb:
 ```python
@@ -98,15 +99,16 @@ Utwórz listę `unique_data`, która zawiera te same elementy bez duplikatów, z
 ```python
 raw_prices = ["12.50", "abc", "7.99", "", "25.00", "not_a_number", "3.14"]
 ```
-1. Za pomocą funkcji pomocniczej i `filter()` odfiltruj elementy, które nie dają się przekonwertować na `float`.
-2. Za pomocą `map()` przekonwertuj przefiltrowane elementy na typ `float`.
-3. Wynik zapisz w liście `valid_prices`.
+
+- Za pomocą funkcji pomocniczej i `filter()` odfiltruj elementy, które nie dają się przekonwertować na `float`.
+- Za pomocą `map()` przekonwertuj przefiltrowane elementy na typ `float`.
+- Wynik zapisz w liście `valid_prices`.
 
 18. Korzystając wyłącznie z wbudowanej listy Pythona i jej metod (`.append()`, `.pop()`, `.pop(0)`):
-1. Zasymuluj działanie stosu (LIFO) — dodaj 5 elementów, a następnie zdejmij 3.
-2. Zasymuluj działanie kolejki (FIFO) — dodaj 5 elementów, a następnie pobierz 3.
+    - Zasymuluj działanie stosu (LIFO) — dodaj 5 elementów, a następnie zdejmij 3.
+    - Zasymuluj działanie kolejki (FIFO) — dodaj 5 elementów, a następnie pobierz 3.
 
-Wypisz stan struktury po każdej operacji.
+    Wypisz stan struktury po każdej operacji.
 
 19. Dana jest lista słowników:
 ```python
@@ -119,8 +121,9 @@ employees = [
 ]
 ```
 Posortuj listę:
-1. Rosnąco według `department`, a w ramach tego samego działu — malejąco według `salary`.
-2. Użyj parametru `key` w funkcji `sorted()` z wyrażeniem `lambda`.
+
+- rosnąco według `department`, a w ramach tego samego działu — malejąco według `salary`,
+- użyj parametru `key` w funkcji `sorted()` z wyrażeniem `lambda`.
 
 20. Napisz dwa warianty kodu, które znajdują pierwszą liczbę podzielną przez 7 i 13 w zakresie od 1 do 10 000 000:
 - List comprehension — najpierw generuje pełną listę, potem pobiera pierwszy element.

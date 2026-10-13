@@ -113,8 +113,8 @@ Za pomocą generator expression i `tuple()` utwórz krotkę `high_humidity` zawi
 19. Zaimportuj moduł `sys`. Utwórz listę `data_list` i krotkę `data_tuple` zawierające te same 1000 liczb całkowitych (od 0 do 999). Porównaj rozmiar obu struktur za pomocą `sys.getsizeof()`. Wypisz wyniki i wyjaśnij komentarzem, dlaczego krotka zajmuje mniej pamięci.
 
 20. Napisz trzy funkcje operujące wyłącznie na krotkach (bez konwersji na listę):
-1. `tuple_replace(data, index, value)` — zwraca nową krotkę, w której element o podanym indeksie został zastąpiony wartością `value` (wykorzystaj slicing i konkatenację krotek).
-2. `tuple_insert(data, index, value)` — zwraca nową krotkę z wstawionym elementem na podanej pozycji.
-3. `tuple_remove(data, index)` — zwraca nową krotkę bez elementu o podanym indeksie.
+    - `tuple_replace(data, index, value)` — zwraca nową krotkę, w której element o podanym indeksie został zastąpiony wartością `value` (wykorzystaj slicing i konkatenację krotek).
+    - `tuple_insert(data, index, value)` — zwraca nową krotkę z wstawionym elementem na podanej pozycji.
+    - `tuple_remove(data, index)` — zwraca nową krotkę bez elementu o podanym indeksie.
 
-Przetestuj każdą funkcję na krotce `sample = (10, 20, 30, 40, 50)` i wypisz wyniki.
+    Przetestuj każdą funkcję na krotce `sample = (10, 20, 30, 40, 50)` i wypisz wyniki.
