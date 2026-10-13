@@ -1,0 +1,79 @@
+# Obsługa wyjątków
+
+1. Uruchom kolejno poniższe instrukcje (każdą osobno) i zapisz w komentarzu nazwę zgłoszonego wyjątku:
+```python
+10 / 0
+int("abc")
+[1, 2, 3][5]
+{"a": 1}["b"]
+"5" + 5
+undefined_variable
+```
+
+2. Wczytaj od użytkownika liczbę całkowitą. Jeśli użytkownik poda wartość, której nie da się przekonwertować, przechwyć wyjątek `ValueError` i wypisz czytelny komunikat zamiast komunikatu błędu interpretera.
+
+3. Wczytaj od użytkownika dwie liczby i wypisz wynik ich dzielenia. Obsłuż osobnymi blokami `except` wyjątki `ValueError` (błędne dane) oraz `ZeroDivisionError` (dzielenie przez zero), wypisując dla każdego inny komunikat.
+
+4. Zmodyfikuj program z poprzedniego zadania tak, aby wynik dzielenia był wypisywany w bloku `else`, a w bloku `finally` wypisywany był komunikat `"Koniec obliczeń"`. Sprawdź, kiedy wykonuje się blok `else`, a kiedy `finally`.
+
+5. Przechwyć wyjątek za pomocą konstrukcji `except ValueError as error:` i wypisz treść komunikatu (`error`) oraz typ wyjątku (`type(error).__name__`).
+
+6. Napisz funkcję `read_int(prompt)`, która w pętli wczytuje dane od użytkownika tak długo, aż poda on poprawną liczbę całkowitą, i zwraca tę liczbę. Wykorzystaj ją do wczytania wieku użytkownika.
+
+7. Napisz funkcję `read_int_in_range(prompt, low, high)`, która działa jak funkcja z poprzedniego zadania, ale dodatkowo wymaga, aby liczba należała do przedziału `[low, high]`. Przetestuj ją na wczytywaniu oceny z zakresu od 2 do 5.
+
+8. Dana jest lista:
+```python
+data = ["12", "7", "abc", "3.5", "", "40", "-8"]
+```
+Za pomocą pętli i bloku `try/except` utwórz listę `numbers` zawierającą tylko te elementy, które dają się przekonwertować na `int`, oraz listę `errors` zawierającą pozostałe elementy.
+
+9. Dany jest słownik:
+```python
+stock = {"apple": 10, "banana": 0, "cherry": 25}
+```
+Napisz funkcję `get_stock(product)`, która zwraca liczbę sztuk produktu, a w przypadku nieistniejącego klucza przechwytuje `KeyError` i zwraca `0`. Następnie zapisz drugą wersję funkcji bez obsługi wyjątków, z użyciem metody `.get()`. W komentarzu porównaj oba podejścia.
+
+10. Napisz funkcję `safe_get(items, index, default=None)`, która zwraca element listy o podanym indeksie, a w przypadku wyjątku `IndexError` zwraca wartość domyślną.
+
+11. Napisz funkcję `calculate_average(numbers)`, która zgłasza wyjątek `ValueError` z komunikatem `"Lista nie może być pusta"` (instrukcja `raise`), gdy przekazano pustą listę, oraz `TypeError`, gdy któryś element nie jest liczbą (wykorzystaj `isinstance(x, (int, float))`). Przetestuj funkcję w bloku `try/except`.
+
+12. Napisz funkcję `set_age(age)`, która zgłasza `ValueError`, jeśli wiek jest ujemny lub większy niż 150, a w przeciwnym razie zwraca go. Przetestuj ją w pętli dla listy wartości `[25, -3, 200, 47]`, wypisując dla każdej wartości wynik albo komunikat błędu.
+
+13. Obsłuż kilka wyjątków w jednym bloku: `except (ValueError, ZeroDivisionError) as error:`. Napisz program, który wczytuje dwie liczby i wypisuje wynik dzielenia, a w przypadku dowolnego z tych dwóch błędów wypisuje jeden wspólny komunikat zawierający treść wyjątku.
+
+14. Wyjaśnij w komentarzu, dlaczego konstrukcja `except:` (bez nazwy wyjątku) lub `except Exception:` obejmująca duży fragment kodu jest uważana za złą praktykę. Pokaż przykład, w którym taki blok ukrywa błąd programisty (np. literówkę w nazwie zmiennej).
+
+15. Napisz funkcję `parse_point(text)`, która przyjmuje napis w postaci `"x,y"` (np. `"3,4"`) i zwraca krotkę dwóch liczb zmiennoprzecinkowych. Jeśli napis ma złą postać, funkcja powinna przechwycić wyjątek, a następnie zgłosić nowy `ValueError` z czytelnym komunikatem, łącząc go z oryginalnym wyjątkiem za pomocą `raise ... from error`.
+
+16. Dana jest funkcja:
+```python
+def withdraw(balance, amount):
+    if amount <= 0:
+        raise ValueError("Kwota musi być dodatnia")
+    if amount > balance:
+        raise ValueError("Brak wystarczających środków")
+    return balance - amount
+```
+Napisz program, który w pętli wczytuje kwoty wypłat dla początkowego salda 1000 zł i wywołuje funkcję `withdraw`. Program obsługuje błędy zarówno przy konwersji danych, jak i zgłaszane przez funkcję, i kończy działanie po wpisaniu `q`.
+
+17. Napisz funkcję `divide(a, b)`, w której na początku za pomocą instrukcji `assert` sprawdzisz, że `b != 0`, z komunikatem błędu. Wywołaj ją z błędnymi danymi i sprawdź, jaki wyjątek zostanie zgłoszony. W komentarzu wyjaśnij, dlaczego `assert` nie powinien zastępować walidacji danych od użytkownika.
+
+18. Przeanalizuj poniższy kod i przewidź kolejność wypisywanych komunikatów dla wywołań `test(1)`, `test(0)` i `test("a")`. Sprawdź swoją odpowiedź, uruchamiając kod.
+```python
+def test(x):
+    try:
+        print("try")
+        result = 10 / x
+    except ZeroDivisionError:
+        print("except ZeroDivisionError")
+        return "błąd"
+    else:
+        print("else")
+        return result
+    finally:
+        print("finally")
+```
+Co dzieje się z wyjątkiem `TypeError` w wywołaniu `test("a")`?
+
+19. Napisz kalkulator wyrażeń postaci `liczba operator liczba` (np. `12 * 4`), wczytywanych od użytkownika w pętli do momentu wpisania `koniec`. Wykorzystaj metodę `.split()`. Obsłuż wyjątki: błędną liczbę elementów wyrażenia, niepoprawne liczby, dzielenie przez zero i nieznany operator — każdy z odpowiednim komunikatem. Program nie może zakończyć się błędem niezależnie od wpisanych danych.

@@ -1,0 +1,59 @@
+# Obsługa plików
+
+W zadaniach otwieraj pliki za pomocą instrukcji `with`, a w przypadku plików tekstowych jawnie podawaj kodowanie (`encoding="utf-8"`).
+
+## Pliki tekstowe
+
+1. Utwórz plik `hello.txt` i zapisz w nim trzy linie tekstu (tryb `"w"`, metoda `.write()`). Pamiętaj o znakach nowej linii `"\n"`. Następnie otwórz plik w trybie `"r"`, wczytaj całą zawartość metodą `.read()` i wypisz ją.
+
+2. Otwórz plik `hello.txt` z poprzedniego zadania w trybie `"a"` i dopisz na jego końcu dwie nowe linie. Wypisz zawartość pliku i sprawdź, czy poprzednie linie zostały zachowane. W komentarzu opisz różnicę między trybami `"w"`, `"a"` i `"x"`.
+
+3. Wczytaj plik `hello.txt` linia po linii, iterując bezpośrednio po obiekcie pliku, i wypisz każdą linię poprzedzoną jej numerem. Usuń znaki nowej linii metodą `.rstrip("\n")`, aby uniknąć pustych linii przy wypisywaniu.
+
+4. Porównaj działanie metod `.read()`, `.readline()` i `.readlines()` na tym samym pliku. Sprawdź typ zwracanego wyniku w każdym przypadku.
+
+5. Wczytaj od użytkownika kolejne imiona (do podania pustego napisu) i zapisz je w pliku `names.txt` — każde w osobnej linii — za pomocą metody `.writelines()`.
+
+6. Napisz funkcję `file_stats(path)`, która zwraca krotkę z liczbą linii, liczbą słów i liczbą znaków w pliku tekstowym (podobnie jak polecenie `wc` w systemach uniksowych). Przetestuj ją na wybranym pliku.
+
+7. Napisz program, który próbuje otworzyć plik o nazwie podanej przez użytkownika i wypisuje jego zawartość. Jeśli plik nie istnieje, przechwyć wyjątek `FileNotFoundError` i wypisz odpowiedni komunikat.
+
+8. Utwórz plik `numbers.txt` zawierający w kolejnych liniach liczby całkowite (część linii może być pusta lub zawierać tekst niebędący liczbą). Napisz program, który wczytuje plik, pomija niepoprawne linie (z obsługą wyjątku `ValueError`) i wypisuje sumę, minimum, maksimum oraz liczbę pominiętych linii.
+
+9. Napisz funkcję `count_words(path)`, która zwraca słownik z liczbą wystąpień każdego słowa w pliku tekstowym. Zamień wszystkie litery na małe i usuń znaki interpunkcyjne `.,;:!?`. Wypisz 10 najczęściej występujących słów (wskazówka: `sorted(counts, key=counts.get, reverse=True)`).
+
+10. Napisz funkcję `copy_uppercase(source, target)`, która kopiuje plik tekstowy `source` do pliku `target`, zamieniając wszystkie litery na wielkie. Otwórz oba pliki w jednej instrukcji `with`.
+
+11. Dany jest plik `grades.csv` o zawartości:
+```
+name;math;physics;computer_science
+Alice;5;4;5
+Bob;3;4;4
+Charlie;4;5;3
+Diana;5;5;5
+```
+Wczytaj plik bez użycia dodatkowych modułów (metody `.strip()` i `.split(";")`), pomiń wiersz nagłówka i dla każdej osoby wypisz średnią ocen. Następnie zapisz do pliku `averages.csv` imiona i średnie (zaokrąglone do dwóch miejsc po przecinku).
+
+12. Rozwiąż poprzednie zadanie ponownie, tym razem korzystając z modułu `csv` (`csv.reader` z parametrem `delimiter=";"` i `csv.writer`). Otwierając plik do zapisu, użyj parametru `newline=""`.
+
+13. Napisz funkcję `save_contacts(contacts, path)`, która zapisuje słownik kontaktów `{imię: numer telefonu}` do pliku tekstowego w postaci `imię=numer` (każdy kontakt w osobnej linii), oraz funkcję `load_contacts(path)`, która odczytuje taki plik i zwraca słownik. Sprawdź, że po zapisie i odczycie otrzymasz słownik równy wyjściowemu.
+
+14. Zapisz ten sam słownik kontaktów do pliku `contacts.json` za pomocą funkcji `json.dump()` (z parametrami `ensure_ascii=False` i `indent=2`) i odczytaj go funkcją `json.load()`. Otwórz plik w edytorze tekstu i porównaj jego zawartość z plikiem z poprzedniego zadania.
+
+15. Napisz program dziennika: przy każdym uruchomieniu wczytuje od użytkownika jedną linię tekstu i dopisuje ją na końcu pliku `journal.txt` wraz z numerem kolejnego wpisu (numer wyznacz, licząc istniejące linie pliku; uwzględnij sytuację, gdy plik jeszcze nie istnieje).
+
+## Pliki binarne
+
+16. Utwórz obiekt `bytes` za pomocą `bytes([72, 101, 108, 108, 111])` i wypisz go. Następnie zakoduj napis `"Zażółć gęślą jaźń"` do bajtów metodą `.encode("utf-8")`, wypisz liczbę znaków napisu i liczbę bajtów po zakodowaniu. W komentarzu wyjaśnij różnicę.
+
+17. Zapisz napis `"Zażółć gęślą jaźń"` do pliku tekstowego z kodowaniem `utf-8`, a następnie otwórz ten plik w trybie binarnym `"rb"` i wypisz jego zawartość jako obiekt `bytes` oraz listę wartości kolejnych bajtów (`list(data)`). Spróbuj też odczytać plik w trybie tekstowym z kodowaniem `cp1250` i opisz wynik.
+
+18. Zapisz do pliku binarnego `data.bin` (tryb `"wb"`) liczby od 0 do 255 jako kolejne bajty. Odczytaj plik, sprawdź jego rozmiar (`len()`) oraz wypisz bajty o indeksach od 65 do 90. Zdekoduj je do napisu i wyjaśnij wynik.
+
+19. Zapisz do pliku binarnego liczby całkowite `[1, 300, 70000, -5]`, zamieniając każdą z nich na 4 bajty metodą `int.to_bytes(4, "little", signed=True)`. Następnie odczytaj plik po 4 bajty (`.read(4)`) i odtwórz liczby metodą `int.from_bytes()`.
+
+20. Napisz funkcję `copy_binary(source, target, chunk_size=4096)`, która kopiuje dowolny plik (np. obraz JPG) w trybie binarnym, czytając go fragmentami o rozmiarze `chunk_size` w pętli `while`. Sprawdź, czy kopia jest identyczna z oryginałem, porównując zawartość obu plików odczytaną w trybie binarnym.
+
+21. Pliki PNG zaczynają się od 8-bajtowej sygnatury `b"\x89PNG\r\n\x1a\n"`, a pliki JPEG od bajtów `b"\xff\xd8\xff"`. Napisz funkcję `detect_image_type(path)`, która odczytuje początek pliku i zwraca `"PNG"`, `"JPEG"` lub `"nieznany"`. Przetestuj ją na kilku plikach, w tym na pliku tekstowym.
+
+22. Otwórz plik `data.bin` z zadania 18 w trybie `"rb"`. Za pomocą metody `.seek()` przejdź do bajtu o indeksie 100, odczytaj 5 bajtów i wypisz je. Następnie wypisz bieżącą pozycję w pliku metodą `.tell()`.

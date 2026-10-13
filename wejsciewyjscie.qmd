@@ -1,4 +1,57 @@
-# Operacja wejścia/wyjścia 
+# Zmienne, typy i operacje wejścia/wyjścia
 
-To do.
+W zadaniach z tego rozdziału korzystaj wyłącznie z sekwencji instrukcji — bez instrukcji warunkowych i pętli.
 
+1. Napisz program, który wypisze na ekranie trzy linie: Twoje imię, nazwę kierunku studiów oraz nazwę uczelni. Każdą linię poprzedź komentarzem (`#`) opisującym, co wypisuje.
+
+2. Za pomocą jednego wywołania funkcji `print()` wypisz słowa `"Python"`, `"jest"`, `"super"` tak, aby były oddzielone myślnikiem (`-`), a na końcu linii pojawił się wykrzyknik zamiast znaku nowej linii. Wykorzystaj parametry `sep` i `end`.
+
+3. Utwórz zmienne `first_name`, `age`, `height` i `is_student`, przypisując im kolejno: napis, liczbę całkowitą, liczbę zmiennoprzecinkową oraz wartość logiczną. Wypisz każdą zmienną wraz z jej typem, korzystając z funkcji `type()`.
+
+4. Wczytaj od użytkownika imię za pomocą `input()` i wypisz powitanie w postaci `Cześć, <imię>!`.
+
+5. Wczytaj od użytkownika dwie liczby całkowite (pamiętaj o konwersji `int()`), a następnie wypisz ich sumę, różnicę, iloczyn, iloraz (`/`), iloraz całkowity (`//`), resztę z dzielenia (`%`) oraz wynik potęgowania (`**`).
+
+6. Sprawdź i wypisz wyniki wyrażeń:
+```python
+7 / 2
+7 // 2
+-7 // 2
+7 % 3
+-7 % 3
+2 ** 10
+0.1 + 0.2
+```
+W komentarzach wyjaśnij wyniki, które Cię zaskoczyły.
+
+7. Wczytaj od użytkownika długość boku kwadratu (liczba zmiennoprzecinkowa) i wypisz jego pole oraz obwód. Wynik zaokrąglij do dwóch miejsc po przecinku za pomocą funkcji `round()`.
+
+8. Wczytaj od użytkownika temperaturę w stopniach Celsjusza i przelicz ją na stopnie Fahrenheita według wzoru $F = \frac{9}{5}C + 32$. Wypisz wynik.
+
+9. Wczytaj od użytkownika liczbę sekund (liczba całkowita) i przelicz ją na godziny, minuty i sekundy, korzystając z operatorów `//` i `%`. Przykładowo dla `3725` program powinien wypisać `1 h 2 min 5 s`.
+
+10. Wczytaj od użytkownika liczbę trzycyfrową i wypisz osobno cyfrę setek, dziesiątek i jedności, korzystając wyłącznie z operatorów `//` i `%`. Następnie wypisz sumę tych cyfr.
+
+11. Utwórz zmienne `a = 5` i `b = 3`. Wykonaj kolejno operacje przypisania złożonego: `a += b`, `a *= 2`, `a -= 1`, `a //= 3`, `a **= 2`, wypisując wartość `a` po każdej z nich.
+
+12. Sprawdź, co się stanie, gdy spróbujesz dodać napis `"10"` do liczby `5`. Odczytaj komunikat błędu i w komentarzu wyjaśnij jego przyczynę. Następnie popraw kod na dwa sposoby: tak, aby wynikiem było `15`, oraz tak, aby wynikiem było `"105"`.
+
+13. Wypisz wyniki konwersji: `int("42")`, `float("3.14")`, `int(3.99)`, `int(-3.99)`, `str(2026)`, `bool(0)`, `bool(15)`, `bool("")`, `bool("False")`. W komentarzach opisz, które wartości są traktowane jako fałsz logiczny.
+
+14. Dany jest napis:
+```python
+text = "  Wstęp do Programowania  "
+```
+Wypisz: długość napisu (`len()`), napis bez białych znaków na początku i końcu (`.strip()`), napis zapisany wielkimi literami (`.upper()`), napis zapisany małymi literami (`.lower()`) oraz napis, w którym słowo `"Programowania"` zastąpiono słowem `"Pythona"` (`.replace()`).
+
+15. Dany jest napis `word = "informatyka"`. Wypisz jego pierwszy znak, ostatni znak (z użyciem indeksu ujemnego) oraz liczbę wystąpień litery `"a"` (`.count()`). Sprawdź też, co zwraca `word.find("ma")`.
+
+16. Wczytaj od użytkownika imię i nazwisko (dwa osobne wywołania `input()`) i wypisz inicjały w postaci `J.K.`, korzystając z indeksowania napisów i operatora `+`.
+
+17. Za pomocą operatora `*` dla napisów wypisz linię złożoną z 40 znaków `=`, pod nią tytuł `RAPORT`, a pod nim ponownie linię z 40 znaków `=`.
+
+18. Wczytaj od użytkownika kwotę w złotych (liczba zmiennoprzecinkowa) oraz kurs euro. Wypisz kwotę po przeliczeniu na euro, zaokrągloną do dwóch miejsc po przecinku.
+
+19. Wczytaj od użytkownika współrzędne dwóch punktów na płaszczyźnie: `x1`, `y1`, `x2`, `y2`. Oblicz i wypisz odległość między punktami, korzystając z operatora `** 0.5` zamiast pierwiastka.
+
+20. Napisz program obliczający wskaźnik BMI. Wczytaj masę ciała w kilogramach i wzrost w centymetrach, przelicz wzrost na metry, oblicz $BMI = \frac{masa}{wzrost^2}$ i wypisz wynik zaokrąglony do jednego miejsca po przecinku. Zadbaj o czytelne komunikaty przy wczytywaniu danych.

@@ -1,0 +1,63 @@
+# Funkcje
+
+1. Napisz funkcję `print_header()`, która nie przyjmuje argumentów i wypisuje na ekranie ramkę z napisem `Wstęp do programowania`. Wywołaj ją dwukrotnie.
+
+2. Napisz funkcję `square(x)`, która zwraca kwadrat liczby `x`. Wywołaj ją dla kilku wartości i wypisz wyniki. Następnie wykorzystaj ją do obliczenia sumy kwadratów liczb od 1 do 10.
+
+3. Napisz funkcję `say_hello(name)`, która tylko wypisuje powitanie (bez instrukcji `return`). Przypisz wynik jej wywołania do zmiennej `result` i wypisz tę zmienną. W komentarzu wyjaśnij, skąd wzięła się wartość `None`.
+
+4. Napisz funkcję `is_even(n)`, która zwraca `True`, jeśli liczba jest parzysta, oraz `False` w przeciwnym wypadku. Zapisz ciało funkcji w jednej linii, zwracając bezpośrednio wynik porównania. Użyj tej funkcji w pętli do wypisania liczb parzystych z zakresu od 1 do 20.
+
+5. Napisz funkcję `max_of_three(a, b, c)`, która zwraca największą z trzech liczb bez użycia funkcji `max()`. Dodaj do funkcji docstring opisujący jej działanie i wypisz go za pomocą `help(max_of_three)`.
+
+6. Napisz funkcję `is_prime(n)`, która sprawdza, czy liczba jest pierwsza. Zakończ działanie funkcji instrukcją `return` od razu po znalezieniu dzielnika. Wykorzystaj ją do wypisania wszystkich liczb pierwszych mniejszych od 100.
+
+7. Napisz funkcję `min_max_avg(numbers)`, która przyjmuje listę liczb i zwraca jednocześnie minimum, maksimum i średnią (jako krotkę). Wywołaj ją i rozpakuj wynik do trzech zmiennych.
+
+8. Napisz funkcję `count_vowels(text)`, która zwraca liczbę samogłosek w napisie, oraz funkcję `count_consonants(text)`, która zwraca liczbę spółgłosek (uwzględnij tylko litery). Przetestuj obie funkcje na kilku napisach.
+
+9. Napisz funkcję `power(base, exponent=2)`, w której wykładnik ma wartość domyślną. Wywołaj ją z jednym i z dwoma argumentami.
+
+10. Napisz funkcję `format_price(amount, currency="PLN", decimals=2)`, która zwraca napis z kwotą zaokrągloną do podanej liczby miejsc po przecinku i z oznaczeniem waluty. Wywołaj ją na kilka sposobów, korzystając z wartości domyślnych.
+
+11. Napisz funkcję `add_item(item, items=[])`, która dodaje element do listy i ją zwraca. Wywołaj ją trzykrotnie bez podawania drugiego argumentu i wypisz wyniki. Wyjaśnij w komentarzu, dlaczego wynik jest zaskakujący, a następnie popraw funkcję, używając wartości domyślnej `None`.
+
+12. Przeanalizuj poniższy kod, przewidź, co zostanie wypisane, a następnie uruchom go i sprawdź swoją odpowiedź:
+```python
+x = 10
+
+def show():
+    x = 5
+    print("wewnątrz:", x)
+
+show()
+print("na zewnątrz:", x)
+```
+W komentarzu wyjaśnij pojęcia zmiennej lokalnej i globalnej.
+
+13. Sprawdź, co się stanie po uruchomieniu poniższego kodu, i wyjaśnij przyczynę błędu:
+```python
+counter = 0
+
+def increment():
+    counter = counter + 1
+
+increment()
+```
+Popraw kod na dwa sposoby: z użyciem słowa kluczowego `global` oraz bez niego (funkcja przyjmuje wartość jako argument i zwraca nową). W komentarzu wskaż, które rozwiązanie jest lepsze i dlaczego.
+
+14. Utwórz globalny słownik `settings = {"theme": "light", "language": "pl"}` oraz funkcję `set_option(key, value)`, która zmienia w nim wartość. Wyjaśnij w komentarzu, dlaczego w tym przypadku nie jest potrzebne słowo kluczowe `global`, a w zadaniu 13 było.
+
+15. Napisz funkcję `print_report(scores)`, która przyjmuje słownik `{imię: punkty}` i wypisuje raport. Wewnątrz zdefiniuj funkcję zagnieżdżoną `grade(points)`, zwracającą ocenę na podstawie liczby punktów (skala dowolna), i wykorzystaj ją przy wypisywaniu każdego wiersza raportu. Sprawdź, czy funkcję `grade` można wywołać spoza `print_report`.
+
+16. Napisz funkcję `make_multiplier(factor)`, która zwraca funkcję zagnieżdżoną mnożącą swój argument przez `factor`. Utwórz za jej pomocą funkcje `double` i `triple` i przetestuj je.
+
+17. Napisz funkcję `make_counter()`, która zwraca funkcję zagnieżdżoną zwiększającą przy każdym wywołaniu wewnętrzny licznik o 1 i zwracającą jego aktualną wartość. Wykorzystaj słowo kluczowe `nonlocal`. Pokaż, że dwa liczniki utworzone przez `make_counter()` działają niezależnie.
+
+18. Napisz rekurencyjną funkcję `factorial(n)` obliczającą silnię oraz jej wersję iteracyjną `factorial_iter(n)`. Porównaj wyniki dla `n` od 0 do 10.
+
+19. Napisz rekurencyjną funkcję `fibonacci(n)` zwracającą `n`-ty wyraz ciągu Fibonacciego. Dodaj globalny licznik wywołań i sprawdź, ile razy funkcja zostaje wywołana dla `n = 10`, `n = 20` i `n = 25`. W komentarzu wyjaśnij, skąd bierze się tak duża liczba wywołań.
+
+20. Napisz rekurencyjną funkcję `sum_digits(n)` zwracającą sumę cyfr liczby naturalnej oraz rekurencyjną funkcję `is_palindrome(text)`, która sprawdza, czy napis jest palindromem (porównując pierwszy i ostatni znak oraz wywołując się dla napisu bez nich).
+
+21. Napisz program do zarządzania listą zadań (to-do), podzielony na funkcje: `add_task(tasks, title)`, `remove_task(tasks, index)`, `show_tasks(tasks)` oraz `main()`, która w pętli wyświetla menu, wczytuje wybór użytkownika i wywołuje odpowiednie funkcje. Lista zadań ma być tworzona w funkcji `main()` i przekazywana do pozostałych funkcji jako argument — nie używaj zmiennych globalnych.

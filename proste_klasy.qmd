@@ -1,0 +1,49 @@
+# Proste klasy
+
+Dla każdej klasy należy poza klasą stworzyć obiekt co najmniej jeden raz.
+
+1. Napisz klasę `Dog` z inicjalizatorem przyjmującym `name` i `age` oraz metodą `bark()`, która wypisuje `"<imię>: Hau!"`. Utwórz dwa obiekty tej klasy i wywołaj na każdym z nich metodę `bark()`. Wypisz również atrybuty obu obiektów.
+
+2. Napisz klasę `Rectangle` z atrybutami `width` i `height` oraz metodami `area()` i `perimeter()` zwracającymi odpowiednio pole i obwód prostokąta. Dodaj metodę `is_square()` zwracającą wartość logiczną.
+
+3. Napisz klasę `Counter` z atrybutem `value` (początkowo 0) oraz metodami `increment()`, `decrement()` i `reset()`. Utwórz dwa liczniki, wykonaj na nich różne operacje i pokaż, że ich stany są niezależne.
+
+4. Napisz klasę `Lamp` z atrybutem `is_on` (początkowo `False`) oraz metodami `turn_on()`, `turn_off()` i `toggle()`. Dodaj metodę `status()`, która zwraca napis `"włączona"` lub `"wyłączona"`.
+
+5. Napisz klasę `BankAccount` z atrybutami `owner` i `balance` (domyślnie 0) oraz metodami `deposit(amount)` i `withdraw(amount)`. Metody mają zgłaszać wyjątek `ValueError`, gdy kwota jest niedodatnia lub gdy na koncie brakuje środków. Przetestuj klasę, przechwytując wyjątki w bloku `try/except`.
+
+6. Do klasy `BankAccount` z poprzedniego zadania dodaj atrybut `history` (lista) zapisujący każdą operację jako krotkę `(typ_operacji, kwota)` oraz metodę `print_history()`, która wypisuje historię operacji.
+
+7. Do klasy `BankAccount` dodaj metodę `transfer(other, amount)`, która przelewa pieniądze na inne konto, wywołując metody `withdraw()` i `deposit()`. Utwórz dwa konta i wykonaj przelew. Sprawdź, co dzieje się z saldami, gdy przelew się nie powiedzie.
+
+8. Przeanalizuj poniższy kod i wyjaśnij w komentarzu, dlaczego zmiana atrybutu obiektu `b` zmienia też obiekt `a`. Następnie utwórz drugi, niezależny obiekt.
+```python
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+a = Point(1, 2)
+b = a
+b.x = 100
+print(a.x)
+```
+
+9. Napisz klasę `Point` z atrybutami `x` i `y` oraz metodami `move(dx, dy)` (przesuwa punkt w miejscu) i `distance_to(other)` (zwraca odległość do innego punktu). Utwórz trzy punkty i wypisz odległości między każdą parą.
+
+10. Napisz klasę `Student` z atrybutami `name` oraz `grades` (pusta lista tworzona w inicjalizatorze) i metodami `add_grade(grade)` (sprawdzającą, czy ocena należy do zbioru `{2, 3, 3.5, 4, 4.5, 5}`), `average()` oraz `has_passed()` (zwraca `True`, jeśli żadna ocena nie jest równa 2).
+
+11. Utwórz listę pięciu obiektów klasy `Student` z poprzedniego zadania, dodaj im po kilka ocen, a następnie:
+    - wypisz imię i średnią każdego studenta,
+    - znajdź studenta z najwyższą średnią,
+    - utwórz listę imion studentów, którzy nie zaliczyli przedmiotu.
+
+12. Napisz klasę `Car` z atrybutem klasowym `wheels = 4` oraz atrybutami instancji `brand` i `model`. Wypisz atrybut `wheels` za pośrednictwem klasy i obiektu. Następnie przypisz `car.wheels = 3` dla jednego obiektu i sprawdź wartość atrybutu w innych obiektach oraz w klasie. Wyjaśnij wynik w komentarzu.
+
+13. Napisz klasę `Ticket` z atrybutem klasowym `counter`, który zlicza liczbę utworzonych biletów. Każdy nowo utworzony bilet ma otrzymywać kolejny numer jako atrybut instancji `number`. Utwórz kilka biletów i wypisz ich numery oraz łączną liczbę biletów.
+
+14. Napisz klasę `ShoppingCart` z metodami `add(product, price, quantity=1)`, `remove(product)`, `total()` oraz `print_receipt()`. Produkty przechowuj w słowniku, w którym kluczem jest nazwa produktu, a wartością krotka `(cena, ilość)`. Dodanie istniejącego produktu ma zwiększać jego ilość.
+
+15. Napisz klasę `Stack` (stos) przechowującą elementy w liście, z metodami `push(item)`, `pop()`, `peek()`, `is_empty()` i `size()`. Metody `pop()` i `peek()` wywołane na pustym stosie mają zgłaszać wyjątek `IndexError` z czytelnym komunikatem. Wykorzystaj stos do sprawdzenia, czy nawiasy w napisie (np. `"(a[b]{c})"`) są poprawnie sparowane.
+
+16. Napisz klasę `Library` przechowującą książki w postaci słownika `{tytuł: liczba_egzemplarzy}`, z metodami `add_book(title, copies=1)`, `borrow(title)` i `give_back(title)`. Metoda `borrow` ma zgłaszać wyjątek, gdy książki nie ma w bibliotece lub wszystkie egzemplarze są wypożyczone. Dodaj metody `save(path)` i `load(path)`, które zapisują i odczytują stan biblioteki z pliku tekstowego.

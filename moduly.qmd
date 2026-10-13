@@ -1,0 +1,51 @@
+# Struktura programu i moduły
+
+1. Zaimportuj moduł `math` i wypisz wartość stałych `math.pi` i `math.e` oraz wyniki funkcji `math.sqrt(2)`, `math.floor(3.7)`, `math.ceil(3.2)` i `math.gcd(48, 18)`.
+
+2. Zaimportuj z modułu `math` tylko funkcje `sqrt` i `hypot` (`from math import sqrt, hypot`) i oblicz długość przekątnej prostokąta o bokach 3 i 4 na dwa sposoby. W komentarzu opisz różnicę między `import math` a `from math import sqrt`.
+
+3. Zaimportuj moduł `random` pod skróconą nazwą (`import random as rnd`). Wylosuj i wypisz: liczbę całkowitą z zakresu 1–6 (`randint`), liczbę zmiennoprzecinkową z przedziału $[0, 1)$ (`random`), losowy element listy (`choice`) oraz listę przetasowaną w miejscu (`shuffle`). Ustaw ziarno generatora (`seed`) i sprawdź, że wyniki stają się powtarzalne.
+
+4. Za pomocą funkcji `dir()` wypisz nazwy dostępne w module `math`. Następnie za pomocą funkcji `help()` wyświetl dokumentację funkcji `math.isclose` i na jej podstawie porównaj wartości `0.1 + 0.2` oraz `0.3`.
+
+5. Wykorzystując moduł `random`, napisz grę w zgadywanie liczby z rozdziału o pętlach, w której tajna liczba jest losowana przy każdym uruchomieniu programu.
+
+6. Utwórz plik `geometry.py` zawierający funkcje `circle_area(r)`, `circle_perimeter(r)`, `rectangle_area(a, b)` oraz stałą `PI = 3.14159`. W tym samym katalogu utwórz plik `main.py`, który importuje moduł `geometry` i korzysta z jego funkcji. Uruchom `main.py`.
+
+7. W pliku `main.py` z poprzedniego zadania zaimportuj z modułu `geometry` wybrane funkcje na trzy sposoby: `import geometry`, `import geometry as geo`, `from geometry import circle_area`. W komentarzu wyjaśnij, dlaczego zapis `from geometry import *` jest odradzany.
+
+8. Do pliku `geometry.py` dodaj na końcu instrukcję `print("Załadowano moduł geometry")`. Uruchom `main.py` i sprawdź, kiedy pojawia się komunikat. Zaimportuj moduł dwukrotnie i sprawdź, ile razy zostanie wypisany komunikat.
+
+9. W module `geometry.py` wypisz wartość zmiennej `__name__`. Sprawdź, jaką ma wartość, gdy uruchamiasz plik bezpośrednio, a jaką, gdy jest importowany z `main.py`. Następnie przenieś kod testujący funkcje modułu do bloku `if __name__ == "__main__":`, tak aby nie był wykonywany podczas importu.
+
+10. Przekształć program w poniższej postaci tak, aby cały kod znajdował się w funkcjach, a program był uruchamiany przez funkcję `main()` wywoływaną w bloku `if __name__ == "__main__":`:
+```python
+numbers = []
+while True:
+    text = input("Podaj liczbę (puste = koniec): ")
+    if text == "":
+        break
+    numbers.append(float(text))
+print("Suma:", sum(numbers))
+print("Średnia:", sum(numbers) / len(numbers))
+```
+Wydziel osobne funkcje do wczytywania danych i obliczania statystyk. Zadbaj o obsługę pustej listy.
+
+11. Napisz moduł `text_tools.py` z funkcjami `count_words(text)`, `reverse_words(text)` oraz `is_palindrome(text)` (ignorującą wielkość liter i spacje). Dodaj docstring na początku modułu i dla każdej funkcji. W osobnym pliku zaimportuj moduł i wywołaj `help(text_tools)`.
+
+12. Utwórz pakiet `shapes` — katalog z plikiem `__init__.py` oraz modułami `circle.py` i `square.py`, z których każdy zawiera funkcje `area()` i `perimeter()`. W pliku `main.py` (poza katalogiem pakietu) zaimportuj moduły na dwa sposoby: `from shapes import circle` oraz `import shapes.square`.
+
+13. W pliku `shapes/__init__.py` z poprzedniego zadania zaimportuj moduły `circle` i `square` (import względny: `from . import circle, square`), tak aby w `main.py` wystarczyło napisać `import shapes` i korzystać z `shapes.circle.area(...)`.
+
+14. Zaimportuj moduł `sys` i wypisz listę `sys.path`. W komentarzu wyjaśnij, w jakiej kolejności Python wyszukuje importowane moduły i co się stanie, gdy utworzysz w katalogu projektu własny plik o nazwie `random.py`.
+
+15. Napisz program `sum_args.py`, który sumuje liczby przekazane jako argumenty wiersza poleceń (`sys.argv`). Uruchom go poleceniem `python sum_args.py 3 4 5.5`. Obsłuż przypadek braku argumentów i argumentów, które nie są liczbami.
+
+16. Program z rozdziału o funkcjach (lista zadań to-do) podziel na moduły:
+    - `storage.py` — funkcje zapisu i odczytu listy zadań z pliku tekstowego,
+    - `tasks.py` — funkcje dodawania, usuwania i wyświetlania zadań,
+    - `main.py` — menu programu i funkcja `main()`.
+
+    Zadbaj o to, aby moduły `storage.py` i `tasks.py` nie korzystały z funkcji `input()` ani `print()` (z wyjątkiem funkcji wyświetlającej zadania) — cała komunikacja z użytkownikiem ma odbywać się w `main.py`.
+
+17. Utwórz moduł `config.py` zawierający stałe konfiguracyjne (np. `FILE_NAME`, `MAX_TASKS`) zapisane wielkimi literami i wykorzystaj je w programie z poprzedniego zadania zamiast wartości wpisanych bezpośrednio w kod.

@@ -1,0 +1,63 @@
+# Tablice
+
+W zadaniach z tego rozdziału korzystaj z typu `array` ze standardowego modułu `array` (`from array import array`). W odróżnieniu od listy tablica przechowuje elementy tylko jednego, ustalonego typu liczbowego, określonego kodem typu (np. `'i'` — liczby całkowite, `'d'` — liczby zmiennoprzecinkowe).
+
+1. Utwórz tablicę `numbers` z kodem typu `'i'` zawierającą liczby `[4, 8, 15, 16, 23, 42]`. Wypisz tablicę, jej długość, pierwszy i ostatni element.
+
+2. Utwórz tablicę `measurements` z kodem typu `'d'` zawierającą pięć dowolnych pomiarów. Wypisz jej atrybuty `typecode` oraz `itemsize` (rozmiar jednego elementu w bajtach). Porównaj `itemsize` z tablicą o kodzie typu `'i'`.
+
+3. Utwórz pustą tablicę o kodzie typu `'i'`. Za pomocą pętli `for` i metody `.append()` dodaj do niej kwadraty liczb od 1 do 10. Następnie za pomocą metody `.extend()` dodaj na raz liczby z listy `[200, 300, 400]`. Wypisz wynik.
+
+4. Dana jest tablica:
+```python
+values = array('i', [10, 20, 30, 40, 50, 60, 70])
+```
+Korzystając z wycinków (slicing), wypisz: pierwsze trzy elementy, co drugi element oraz elementy w odwrotnej kolejności. Sprawdź typ wyniku wycinka.
+
+5. Dla tablicy z poprzedniego zadania:
+   - zmień element o indeksie `2` na `35`,
+   - wstaw liczbę `5` na początek tablicy (`.insert()`),
+   - usuń pierwsze wystąpienie liczby `40` (`.remove()`),
+   - usuń i wypisz ostatni element (`.pop()`).
+
+   Wypisz tablicę po każdej operacji.
+
+6. Utwórz tablicę o kodzie typu `'i'` i spróbuj dodać do niej:
+   - liczbę zmiennoprzecinkową `3.5`,
+   - napis `"7"`.
+
+   Odczytaj komunikaty błędów i w komentarzach wyjaśnij, czym tablica różni się pod tym względem od listy. Sprawdź też, co się stanie, gdy do tablicy o kodzie `'d'` dodasz liczbę całkowitą.
+
+7. Utwórz tablicę o kodzie typu `'b'` (liczby całkowite 1-bajtowe ze znakiem) i spróbuj dodać do niej liczby `127`, `128` i `-129`. Opisz w komentarzu, z czego wynika ograniczenie zakresu wartości.
+
+8. Dana jest tablica:
+```python
+grades = array('i', [3, 5, 4, 5, 2, 5, 4, 3, 5])
+```
+Wypisz, ile razy występuje ocena `5` (`.count()`), indeks pierwszego wystąpienia oceny `2` (`.index()`), sumę i średnią ocen oraz ocenę najwyższą i najniższą (`max()`, `min()`).
+
+9. Dana jest lista `prices = [19.99, 5.49, 3.20, 12.00, 7.75]`. Utwórz na jej podstawie tablicę o kodzie typu `'d'`, następnie w pętli zwiększ każdą cenę o 23% (VAT), modyfikując elementy tablicy przez indeks. Na koniec przekształć tablicę z powrotem na listę metodą `.tolist()` i wypisz wynik.
+
+10. Dana jest tablica:
+```python
+temperatures = array('d', [12.5, 14.1, 9.8, 15.3, 17.0, 11.2, 13.4])
+```
+Za pomocą pętli `for` znajdź (bez użycia `max()` i `min()`) indeks dnia z najwyższą i najniższą temperaturą. Policz także, w ilu dniach temperatura była wyższa od średniej.
+
+11. Utwórz tablicę o kodzie typu `'i'` zawierającą liczby od 1 do 20. Za pomocą list comprehension utwórz z niej nową tablicę zawierającą tylko liczby podzielne przez 3. Odwróć ją w miejscu metodą `.reverse()` i wypisz wynik.
+
+12. Dane są dwie tablice o tej samej długości:
+```python
+a = array('d', [1.0, 2.0, 3.0])
+b = array('d', [4.0, 5.0, 6.0])
+```
+Oblicz i wypisz:
+
+- tablicę `c` będącą sumą odpowiadających sobie elementów,
+- iloczyn skalarny wektorów `a` i `b`.
+
+Wykorzystaj `zip()`. Sprawdź też, co daje wyrażenie `a + b` i dlaczego nie jest to suma wektorowa.
+
+13. Wczytuj od użytkownika liczby całkowite tak długo, aż poda pusty napis, i zapisuj je w tablicy o kodzie typu `'i'`. Następnie posortuj elementy (funkcja `sorted()` zwraca listę — utwórz z niej nową tablicę) i wypisz medianę.
+
+14. Utwórz tablicę `data_array` (kod `'i'`) zawierającą liczby od 0 do 9999 i wypisz, ile bajtów zajmują przechowywane w niej dane (`len(data_array) * data_array.itemsize`). W komentarzu wyjaśnij, dlaczego lista z tymi samymi liczbami zajmuje znacznie więcej pamięci (wskazówka: co tak naprawdę przechowuje lista?).

@@ -1,0 +1,61 @@
+# Instrukcja iteracyjna
+
+W zadaniach z tego rozdziału nie korzystaj z list — wystarczą zmienne, napisy i funkcja `range()`.
+
+1. Za pomocą pętli `for` i funkcji `range()` wypisz liczby od 1 do 10, każdą w osobnej linii. Następnie wypisz je w jednej linii, oddzielone spacją (parametr `end` funkcji `print()`).
+
+2. Za pomocą pętli `for` wypisz:
+   - wszystkie liczby parzyste od 0 do 30,
+   - liczby od 20 do 0 w kolejności malejącej,
+   - co piątą liczbę z zakresu od 5 do 100.
+
+   W każdym przypadku użyj odpowiednich argumentów funkcji `range()` zamiast instrukcji warunkowej.
+
+3. Wczytaj od użytkownika liczbę naturalną `n` i oblicz sumę liczb od 1 do `n` za pomocą pętli. Porównaj wynik ze wzorem $\frac{n(n+1)}{2}$.
+
+4. Wczytaj od użytkownika liczbę naturalną `n` i oblicz jej silnię $n!$ za pomocą pętli `for`.
+
+5. Wczytaj od użytkownika liczbę całkowitą i wypisz dla niej tabliczkę mnożenia od 1 do 10 w postaci `7 x 3 = 21`.
+
+6. Za pomocą pętli zagnieżdżonych wypisz tabliczkę mnożenia 10×10 w postaci tabeli. Do wyrównania kolumn możesz użyć metody `.rjust()` napisów lub znaku tabulacji `"\t"`.
+
+7. Wczytaj od użytkownika napis i za pomocą pętli `for` przechodzącej po znakach napisu policz, ile zawiera samogłosek, a ile cyfr.
+
+8. Wczytaj od użytkownika napis i zbuduj (w pętli, znak po znaku) nowy napis zapisany w odwrotnej kolejności. Nie korzystaj z wycinków.
+
+9. Wczytaj od użytkownika liczbę naturalną i za pomocą pętli `while` oraz operatorów `//` i `%` oblicz sumę jej cyfr oraz liczbę cyfr.
+
+10. Napisz program, który wczytuje od użytkownika liczby tak długo, aż zostanie podane `0`. Na koniec wypisz sumę, liczbę wczytanych wartości (bez zera) oraz ich średnią arytmetyczną. Obsłuż przypadek, gdy pierwszą podaną liczbą jest `0`.
+
+11. Wczytuj od użytkownika liczbę z zakresu od 1 do 10 tak długo, aż poda poprawną wartość (walidacja danych wejściowych w pętli `while`). Po każdej błędnej próbie wypisz komunikat.
+
+12. Wypisz wszystkie liczby od 1 do 100, ale zamiast liczb podzielnych przez 3 wypisz `Fizz`, zamiast podzielnych przez 5 — `Buzz`, a zamiast podzielnych przez 3 i 5 — `FizzBuzz`.
+
+13. Wczytaj od użytkownika liczbę naturalną `n` i sprawdź, czy jest liczbą pierwszą. Przerwij pętlę instrukcją `break` po znalezieniu pierwszego dzielnika. Wykorzystaj klauzulę `else` pętli `for` do wypisania informacji, że liczba jest pierwsza.
+
+14. Wypisz wszystkie liczby pierwsze mniejsze od 100, korzystając z pętli zagnieżdżonych.
+
+15. Za pomocą pętli `for` i instrukcji `continue` wypisz liczby od 1 do 50 z pominięciem liczb podzielnych przez 7 oraz liczb zawierających cyfrę 7 (sprawdź `"7" in str(i)`).
+
+16. Wczytaj od użytkownika liczbę naturalną `n` i wypisz `n` pierwszych wyrazów ciągu Fibonacciego, korzystając wyłącznie z dwóch zmiennych pomocniczych i wielokrotnego przypisania (`a, b = b, a + b`).
+
+17. Wczytaj od użytkownika dwie liczby naturalne i oblicz ich największy wspólny dzielnik algorytmem Euklidesa (w wersji z resztą z dzielenia), korzystając z pętli `while`. Na tej podstawie oblicz też najmniejszą wspólną wielokrotność.
+
+18. Wczytaj od użytkownika liczbę naturalną `n` i wypisz (za pomocą pętli i operatora `*` dla napisów) następujące figury o wysokości `n`:
+    - trójkąt prostokątny z gwiazdek wyrównany do lewej,
+    - ten sam trójkąt wyrównany do prawej,
+    - choinkę (trójkąt równoramienny).
+
+    Przykład choinki dla `n = 3`:
+
+    ```
+      *
+     ***
+    *****
+    ```
+
+19. Wczytaj od użytkownika liczbę naturalną i wypisz kolejne wyrazy ciągu Collatza, aż ciąg osiągnie wartość 1 (jeśli liczba jest parzysta, dzielimy ją przez 2, w przeciwnym razie mnożymy przez 3 i dodajemy 1). Na koniec wypisz liczbę wykonanych kroków oraz największą wartość, jaka pojawiła się w ciągu.
+
+20. Napisz grę w zgadywanie liczby. Ustal w kodzie tajną liczbę z zakresu 1–100 (np. `secret = 37`). Użytkownik ma maksymalnie 7 prób; po każdej próbie program wypisuje `"za mało"` lub `"za dużo"`. Po odgadnięciu wypisz liczbę wykorzystanych prób i zakończ pętlę instrukcją `break`. Jeśli wszystkie próby się wyczerpią, wypisz tajną liczbę (wykorzystaj klauzulę `else` pętli).
+
+21. Napisz program z menu tekstowym działający w pętli `while True`. Program przechowuje stan konta (początkowo 0 zł) i pozwala wybrać opcję: `1` — wpłata, `2` — wypłata, `3` — wyświetlenie salda, `0` — wyjście. Nie pozwól na wypłatę większą niż saldo. Pętlę zakończ instrukcją `break`.

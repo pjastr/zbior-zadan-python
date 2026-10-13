@@ -13,13 +13,23 @@ book:
     - part: "Wprowadzenie do języka Python"
       chapters: 
         - wejsciewyjscie.qmd
+        - instrukcja_warunkowa.qmd
+        - petle.qmd
         - listy.qmd
+        - tablice.qmd
         - krotki.qmd
+        - zbiory.qmd
         - slowniki.qmd
+        - funkcje.qmd
         - argumenty_funkcji.qmd
         - fstringi.qmd
+        - wyjatki.qmd
+        - pliki.qmd
+        - moduly.qmd
+        - czysty_kod.qmd
     - part: "Programowanie obiektowe"
       chapters:
+        - proste_klasy.qmd
         - inicjalizator.qmd
         - wlasciwosci.qmd
         - dziedziczenie_polimorfizm.qmd

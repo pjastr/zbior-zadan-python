@@ -1,0 +1,134 @@
+# Zasady pisania czystego kodu
+
+Zadania z tego rozdziału dotyczą zaleceń dokumentu [PEP 8](https://peps.python.org/pep-0008/) oraz narzędzi wspierających pisanie czystego kodu. Narzędzia instaluje się poleceniem `pip install <nazwa>` (najlepiej w środowisku wirtualnym).
+
+1. Popraw nazwy w poniższym kodzie zgodnie z konwencjami PEP 8 (`snake_case` dla zmiennych i funkcji, `UPPER_CASE` dla stałych). Nadaj nazwom znaczenie, które wyjaśnia rolę zmiennej.
+```python
+def F(L):
+    S = 0
+    for X in L:
+        S += X
+    return S / len(L)
+
+A = [3, 5, 4]
+b = F(A)
+print(b)
+```
+
+2. Popraw formatowanie poniższego kodu zgodnie z PEP 8 (wcięcia, spacje wokół operatorów i po przecinkach, puste linie, długość linii):
+```python
+import math,random
+def area(r):return math.pi*r**2
+def main():
+  for i in range(5):
+    r=random.randint(1,10)
+    print("r =",r,"pole =",round(area(r),2))
+main()
+```
+
+3. Zainstaluj narzędzie `ruff` i uruchom `ruff check` na pliku z poprzedniego zadania (w wersji przed poprawkami). Przeanalizuj zgłoszone problemy, a następnie uruchom `ruff format` i porównaj wynik ze swoimi poprawkami.
+
+4. Zainstaluj narzędzie `pylint` i uruchom je na wybranym rozwiązaniu z rozdziału o funkcjach. Popraw kod tak, aby uzyskać ocenę co najmniej 9/10. Zapisz w komentarzu, jakie rodzaje uwag pojawiły się najczęściej.
+
+5. Zastąp „magiczne liczby” w poniższym kodzie stałymi o czytelnych nazwach:
+```python
+def final_price(price):
+    if price > 500:
+        price = price * 0.9
+    return price * 1.23
+```
+
+6. Dodaj docstringi (zgodne z PEP 257) do modułu oraz do każdej funkcji z zadania 5. Opisz w nich argumenty, zwracaną wartość oraz zgłaszane wyjątki. Wyświetl je za pomocą `help()`.
+
+7. Dodaj adnotacje typów (type hints) do funkcji:
+```python
+def average(numbers):
+    return sum(numbers) / len(numbers)
+
+def find_user(users, name):
+    for user in users:
+        if user["name"] == name:
+            return user
+    return None
+```
+Zainstaluj narzędzie `mypy` i sprawdź nim kod, w którym funkcja `average` zostaje wywołana z napisem zamiast listy.
+
+8. Uprość poniższy kod, korzystając z wczesnego powrotu (`return`) zamiast zagnieżdżonych instrukcji warunkowych:
+```python
+def can_vote(age, is_citizen, is_registered):
+    if age >= 18:
+        if is_citizen:
+            if is_registered:
+                return True
+            else:
+                return False
+        else:
+            return False
+    else:
+        return False
+```
+Następnie zapisz funkcję w jednej linii jako `return` z wyrażeniem logicznym.
+
+9. Uprość poniższe fragmenty kodu, stosując idiomy języka Python:
+```python
+if is_valid == True:
+    print("OK")
+
+if len(items) == 0:
+    print("Pusto")
+
+for i in range(len(names)):
+    print(i, names[i])
+
+result = []
+for x in range(10):
+    if x % 2 == 0:
+        result.append(x * x)
+```
+
+10. W poniższym kodzie ten sam fragment powtarza się trzykrotnie. Zastosuj zasadę DRY (*Don't Repeat Yourself*), wydzielając funkcję:
+```python
+math_scores = [4, 5, 3, 5]
+print("Matematyka:", round(sum(math_scores) / len(math_scores), 2))
+physics_scores = [3, 4, 4]
+print("Fizyka:", round(sum(physics_scores) / len(physics_scores), 2))
+cs_scores = [5, 5, 4, 5]
+print("Informatyka:", round(sum(cs_scores) / len(cs_scores), 2))
+```
+
+11. Poniższa funkcja robi zbyt wiele rzeczy naraz. Podziel ją na mniejsze funkcje, z których każda ma jedno zadanie (wczytanie danych, obliczenia, wypisanie wyników):
+```python
+def process():
+    numbers = []
+    while True:
+        text = input("Liczba: ")
+        if text == "":
+            break
+        numbers.append(int(text))
+    even = [n for n in numbers if n % 2 == 0]
+    odd = [n for n in numbers if n % 2 != 0]
+    print("Parzyste:", even, "suma:", sum(even))
+    print("Nieparzyste:", odd, "suma:", sum(odd))
+```
+
+12. Dodaj do funkcji `is_prime(n)` z rozdziału o funkcjach przykłady użycia w docstringu w formacie modułu `doctest` (linie zaczynające się od `>>>`). Uruchom testy poleceniem `python -m doctest -v nazwa_pliku.py`.
+
+13. Napisz plik `test_geometry.py` z testami dla funkcji modułu `geometry.py` z rozdziału o modułach, korzystając z instrukcji `assert` w funkcjach o nazwach zaczynających się od `test_`. Zainstaluj narzędzie `pytest` i uruchom testy poleceniem `pytest`. Celowo wprowadź błąd do jednej z funkcji i sprawdź, jak `pytest` raportuje niepowodzenie.
+
+14. Przeanalizuj poniższy kod i wypisz w komentarzu co najmniej pięć problemów związanych z czytelnością i jakością kodu. Następnie przepisz go w czystej postaci.
+```python
+def calc(d):
+    # d - dane
+    r = {}
+    for k in d:
+        t = 0
+        for i in d[k]:
+            t = t + i
+        r[k] = t / len(d[k]) if len(d[k]) != 0 else 0
+    l = []
+    for k in r:
+        if r[k] >= 4.5: l.append(k)
+    return r, l
+```
+
+15. Utwórz w katalogu projektu plik `pyproject.toml` z konfiguracją narzędzia `ruff` (np. maksymalna długość linii 88 znaków, włączone reguły `E`, `F`, `I`, `N`). Uruchom `ruff check` na całym projekcie z poprzednich rozdziałów i popraw zgłoszone problemy.

@@ -1,0 +1,55 @@
+# Instrukcja warunkowa
+
+1. Wczytaj od użytkownika liczbę całkowitą i wypisz, czy jest dodatnia, ujemna, czy równa zero.
+
+2. Wczytaj od użytkownika liczbę całkowitą i wypisz, czy jest parzysta, czy nieparzysta (wykorzystaj operator `%`).
+
+3. Wczytaj od użytkownika wiek i wypisz komunikat `"Pełnoletni"` lub `"Niepełnoletni"`. Następnie zapisz to samo rozwiązanie w jednej linii, korzystając z wyrażenia warunkowego (`x if warunek else y`).
+
+4. Wczytaj od użytkownika dwie liczby i wypisz większą z nich bez użycia funkcji `max()`. Jeśli liczby są równe, wypisz odpowiedni komunikat.
+
+5. Wczytaj od użytkownika trzy liczby i wypisz największą z nich, korzystając wyłącznie z instrukcji `if`, `elif` i `else` oraz operatorów porównania.
+
+6. Wczytaj od użytkownika liczbę punktów (od 0 do 100) uzyskanych na kolokwium i wypisz ocenę według skali:
+   - 0–50 — `2.0`,
+   - 51–60 — `3.0`,
+   - 61–70 — `3.5`,
+   - 71–80 — `4.0`,
+   - 81–90 — `4.5`,
+   - 91–100 — `5.0`.
+
+   Jeśli liczba punktów jest spoza zakresu, wypisz komunikat o błędnych danych.
+
+7. Wczytaj od użytkownika rok i sprawdź, czy jest przestępny. Rok jest przestępny, jeśli jest podzielny przez 4 i niepodzielny przez 100 lub jest podzielny przez 400. Zapisz warunek w jednym wyrażeniu z użyciem operatorów `and`, `or`.
+
+8. Wczytaj od użytkownika temperaturę i za pomocą porównania łańcuchowego (np. `15 <= t < 25`) wypisz, czy jest `"zimno"` (poniżej 15), `"przyjemnie"` (od 15 do 25) czy `"gorąco"` (powyżej 25).
+
+9. Wczytaj od użytkownika pojedynczy znak i sprawdź, czy jest samogłoską (`a`, `e`, `i`, `o`, `u`, `y`), korzystając z operatora `in` dla napisu `"aeiouy"`. Uwzględnij również wielkie litery (np. przez `.lower()`).
+
+10. Wczytaj od użytkownika długości trzech odcinków i sprawdź, czy można z nich zbudować trójkąt (suma długości dwóch dowolnych boków musi być większa od trzeciego). Jeśli tak, określ, czy trójkąt jest równoboczny, równoramienny czy różnoboczny.
+
+11. Wczytaj od użytkownika współczynniki `a`, `b`, `c` równania kwadratowego $ax^2 + bx + c = 0$. Oblicz wyróżnik $\Delta$ i wypisz pierwiastki równania (dwa, jeden lub informację o ich braku w zbiorze liczb rzeczywistych). Obsłuż osobno przypadek `a == 0`.
+
+12. Wczytaj od użytkownika współrzędne punktu `x`, `y` i wypisz, w której ćwiartce układu współrzędnych leży punkt. Uwzględnij przypadki, gdy punkt leży na osi lub w początku układu.
+
+13. Wczytaj od użytkownika login i hasło. Jeśli login to `"admin"` i hasło to `"python123"`, wypisz `"Zalogowano"`. W przeciwnym razie wypisz, czy błędny był login, czy hasło. Wykorzystaj zagnieżdżoną instrukcję `if`.
+
+14. Wczytaj od użytkownika napis i wypisz informację, czy jest pusty. Wykorzystaj to, że pusty napis ma wartość logiczną `False` (warunek `if not text:`).
+
+15. Wczytaj od użytkownika numer dnia tygodnia (1–7) i wypisz jego nazwę, korzystając z instrukcji `match`–`case`. Dla wartości spoza zakresu użyj wzorca `case _`.
+
+16. Napisz prosty kalkulator: wczytaj dwie liczby oraz symbol operacji (`+`, `-`, `*`, `/`) i wypisz wynik. Do wyboru operacji użyj instrukcji `match`–`case`. Obsłuż przypadek dzielenia przez zero oraz nieznanego symbolu operacji komunikatem dla użytkownika.
+
+17. Wczytaj od użytkownika kwotę zakupów. Sklep udziela rabatu: 5% od kwoty powyżej 100 zł, 10% od kwoty powyżej 500 zł oraz 15% od kwoty powyżej 1000 zł. Dodatkowo, jeśli klient posiada kartę lojalnościową (wczytaj odpowiedź `t`/`n`), otrzymuje dodatkowe 2% rabatu. Wypisz kwotę do zapłaty.
+
+18. Wczytaj od użytkownika masę przesyłki w kilogramach oraz informację, czy jest to przesyłka priorytetowa. Oblicz koszt wysyłki według reguł:
+    - do 1 kg — 10 zł,
+    - powyżej 1 kg do 5 kg — 15 zł,
+    - powyżej 5 kg do 20 kg — 25 zł,
+    - powyżej 20 kg przesyłka nie jest przyjmowana.
+
+    Przesyłka priorytetowa kosztuje o 50% więcej.
+
+19. Wczytaj od użytkownika datę w postaci trzech liczb: dzień, miesiąc, rok. Sprawdź, czy data jest poprawna (uwzględnij liczbę dni w miesiącach oraz lata przestępne).
+
+20. Wczytaj od użytkownika godzinę w formacie 24-godzinnym (`godzina` i `minuta` jako dwie liczby całkowite) i wypisz ją w formacie 12-godzinnym z dopiskiem `AM` lub `PM` (np. `0:15` → `12:15 AM`, `13:05` → `1:05 PM`, `12:00` → `12:00 PM`). Sprawdź poprawność danych wejściowych.
